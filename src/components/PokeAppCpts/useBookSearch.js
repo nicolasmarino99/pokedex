@@ -23,7 +23,7 @@ const UseBookSearch = ({ query, savePokemon }) => {
       const data = await getData(`https://pokeapi.co/api/v2/pokemon/${query}`);
 
       setPokemon(data);
-      if (pokemon) savePokemon(pokemon);
+      if (pokemon) savePokemon(data);
     })();
   }, [query]);
 
