@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import getData from '../../api';
 import pokemonLogo from '../../assets/imgs/pokemon.svg';
 import { Link, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { savePokemon } from '../../actions';
 //import Pokemon from './Pokemon';
 
 //const Pokemon = (props) => {
@@ -15,16 +17,16 @@ import { Link, Route, Switch } from 'react-router-dom';
 
 
 
-const UseBookSearch = ({query}) => {
-    const [pokemons, setPokemons] = useState([])
+const UseBookSearch = ({query, savePokemon}) => {
+    const [pokemon, setPokemon] = useState([])
 
     useEffect(() => {
         
         (async () => {
             const data = await getData(`https://pokeapi.co/api/v2/pokemon/${query}`)
             
-            setPokemons(data)
-            console.log(pokemons)
+            setPokemon(data)
+            console.log(pokemon)
         })()
     }, [query])
 
@@ -38,10 +40,10 @@ const UseBookSearch = ({query}) => {
            
           
          
-            <Link to={`/pokemons/${pokemons.name}`}>
+            <Link to={`/pokemons/${pokemon.name}`} onClick={savePokemon(pokemon)}>
               <div>
-                  {pokemons.name}
-                   <img src={pokemons.name ? pokemons.sprites.back_default : ''}/>     
+                  {pokemon.name}
+                   <img src={pokemon.name ? pokemon.sprites.back_default : ''}/>     
               </div>
             </Link>
         
@@ -51,4 +53,11 @@ const UseBookSearch = ({query}) => {
     );
 }
 
-export default UseBookSearch;
+const mapDispatchToProps = dispatch => ({
+    savePokemon: pokemon => dispatch(savePokemon(pokemon)),
+    
+  });
+
+  
+
+export default connect(mapDispatchToProps)(UseBookSearch);
