@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Pokemon = ({match, pokemon}) => {
-    console.log(match)
+    console.log(pokemon)
     return (
         <div>
             {match.params.name}
