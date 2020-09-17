@@ -29,7 +29,7 @@ const Content = styled.div`
 const Pokedex = ({history, pokemonsList, savePokemonsList, savePokemon}) => {
   const [pokemons, setPokemons] = useState([]);
   const [page, setPage] = useState(0);
-  const [pokemon, setPokemon] = useState([]);
+  
   const handleScroll = e => {
     const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
 
@@ -43,7 +43,7 @@ const Pokedex = ({history, pokemonsList, savePokemonsList, savePokemon}) => {
         const data = await getData(`https://pokeapi.co/api/v2/pokemon?offset=${page+20}&limit=20`);
         if (data) data.results.forEach(async pokemon => pokemonsList2.push(await getData(`${pokemon.url}`)));
         setPokemons(pokemonsList2);
-        console.log(pokemons, 'pokemos2')
+        
         savePokemonsList(pokemons);
       })();
     }
@@ -55,15 +55,11 @@ const Pokedex = ({history, pokemonsList, savePokemonsList, savePokemon}) => {
       const data = await getData(`https://pokeapi.co/api/v2/pokemon?offset=${page}&limit=20`);
       if (data) data.results.forEach(async pokemon => pokemonsList.push(await getData(`${pokemon.url}`)));
       setPokemons(pokemonsList);
-      console.log(pokemons, 'pokemos1')
+      
       savePokemonsList(pokemons);
     })();
   }, [10]);
 
-  const handleClick = pkn => {
-    setPokemon(pkn);
-    if (pokemon) savePokemon(pkn);
-  };
   
 
   return (
