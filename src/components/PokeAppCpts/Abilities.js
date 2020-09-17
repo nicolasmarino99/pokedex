@@ -1,11 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Auth from './Auth';
 
-const Abilities = props => (
+const Abilities = () => (
   <div>
-    <button className="back-btn" type="button" onClick={() => { Auth.back(() => { props.history.push('/'); }); }}>
-      Logout
-    </button>
+    <Link to="/"><button className="back-btn" type="button">Logout</button></Link>
   </div>
 );
 

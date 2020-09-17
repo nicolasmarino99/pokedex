@@ -1,11 +1,10 @@
 import React from 'react';
-import Auth from './Auth';
+import { Link } from 'react-router-dom';
 
-const Items = (props) => {
+
+const Items = () => {
     return (
-        <button className="back-btn" type="button" onClick={() => { Auth.back(() => { props.history.push('/'); }); }}>
-      Logout
-    </button>
+      <Link to="/"><button className="back-btn" type="button">Logout</button></Link>
     );
 }
 

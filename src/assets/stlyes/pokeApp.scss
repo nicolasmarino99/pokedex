@@ -1,0 +1,8 @@
+.poke-app {
+    .options {
+        display: grid;
+        grid-template-columns: 33% 30%;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+    }
+}
