@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import Auth from './Auth';
-import axios from 'axios'
-import UseBookSearch from './useBookSearch';
+import UsePokemonSearch from './UsePokemonSearch';
 import pokemonLogo from '../../assets/imgs/pokemon.svg';
+
 
 
 const PokeApp = (props) => { 
   
   const [query, setQuery] = useState('');
-  //useBookSearch(query)
-  console.log(query)
   const handleSubmit = e => setQuery(e.target.value);
  
 
@@ -27,7 +25,7 @@ const PokeApp = (props) => {
       <button onClick={()=> {Auth.enter(()=>{props.history.push("/type-charts")})}}>Type Charts</button>
     </div>
   </div>
-  <UseBookSearch query={query}/>
+  <UsePokemonSearch query={query}/>
   </>
 )};
 

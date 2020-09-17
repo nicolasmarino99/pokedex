@@ -4,18 +4,9 @@ import { connect } from 'react-redux';
 import getData from '../../api';
 import pokemonLogo from '../../assets/imgs/pokemon.svg';
 import { savePokemon } from '../../actions';
-// import Pokemon from './Pokemon';
 
-// const Pokemon = (props) => {
-//    console.log(props)
-//    return (
-//        <div>
-//          {props.match.params.pokemonsName}
-//        </div>
-//    );
-// }
 
-const UseBookSearch = ({ query, savePokemon }) => {
+const UsePokemonSearch = ({ query, savePokemon }) => {
   const [pokemon, setPokemon] = useState([]);
 
   useEffect(() => {
@@ -47,4 +38,4 @@ const mapDispatchToProps = dispatch => ({
 
 });
 
-export default connect(null, mapDispatchToProps)(UseBookSearch);
+export default connect(null, mapDispatchToProps)(UsePokemonSearch);

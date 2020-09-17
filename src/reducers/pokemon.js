@@ -3,7 +3,7 @@ const pokemonReducer = (state = {}, actions) => {
     switch (actions.type) {
         case 'SAVE_POKEMON':
           newState = actions.pokemon;
-          console.log(newState, 'newsatte')
+          
           return newState;
         default:
             return state;
