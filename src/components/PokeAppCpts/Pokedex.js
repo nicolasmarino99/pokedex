@@ -10,7 +10,7 @@ import Auth from './Auth';
 
 import { onEnter, onExit } from '../../animations/gsapAnimations';
 import getData from '../../api';
-import { savePokemonsList } from '../../actions';
+import { savePokemonsList, savePokemon } from '../../actions';
 
 const routes = [
   { path: '/', name: 'Home', Component: Home },
@@ -26,9 +26,10 @@ const Content = styled.div`
   overflow: auto;
 `;
 
-const Pokedex = ({history, pokemonsList, savePokemonsList}) => {
+const Pokedex = ({history, pokemonsList, savePokemonsList, savePokemon}) => {
   const [pokemons, setPokemons] = useState([]);
   const [page, setPage] = useState(0);
+  const [pokemon, setPokemon] = useState([]);
   const handleScroll = e => {
     const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
 
@@ -59,19 +60,25 @@ const Pokedex = ({history, pokemonsList, savePokemonsList}) => {
     })();
   }, [10]);
 
+  const handleClick = pkn => {
+    setPokemon(pkn);
+    if (pokemon) savePokemon(pkn);
+  };
   
-console.log(pokemonsList)
+
   return (
     <>
       <button className="back-btn" type="button" onClick={() => { Auth.back(() => { history.push('/'); }); }}>Logout</button>
       <Content onScroll={handleScroll}>
         {(pokemonsList.length > 1 ? pokemonsList : pokemons).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(pokemon => (
-          <Link key={pokemon.name} to={`/pokemons/${pokemon.name}`}>
-            <div>
-              {pokemon.name}
-              <img src={pokemon.name ? pokemon.sprites.back_default : ''} />
-            </div>
-          </Link>
+          <div onClick={() => savePokemon(pokemon)}>
+            <Link key={pokemon.name} to={`/pokemons/${pokemon.name}`}>
+              <div>
+                {pokemon.name}
+                <img src={pokemon.name ? pokemon.sprites.back_default : ''} />
+              </div>
+            </Link>
+          </div>  
         ))}
        </Content>
     </>
@@ -96,7 +103,8 @@ console.log(pokemonsList)
 
 const mapDispatchToProps = dispatch => ({
   savePokemonsList: pokemonsList => dispatch(savePokemonsList(pokemonsList)),
-})
+  savePokemon: pokemon => dispatch(savePokemon(pokemon)),
+});
 
 const mapStateToProps = state => ({
   pokemonsList: state.pokemonsList,
