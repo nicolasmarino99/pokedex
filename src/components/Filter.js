@@ -13,7 +13,7 @@ const Filter = () => {
           aria-controls="example-collapse-text"
           aria-expanded={open}
         >
-          click
+          filters
         </Button>
         <Collapse in={open}>
           <div id="example-collapse-text">
