@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import getData from '../../api';
 import pokemonLogo from '../../assets/imgs/pokemon.svg';
 import { savePokemon } from '../../actions';
+import { Card, AnimatedIcon } from '../Card';
 
 
-const UsePokemonSearch = ({ query, savePokemon }) => {
+
+const UsePokemonSearch = ({ query, savePokemon, pokemonState }) => {
   const [pokemon, setPokemon] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       const data = await getData(`https://pokeapi.co/api/v2/pokemon/${query}`);
 
       setPokemon(data);
       if (pokemon) savePokemon(data);
+      setLoading(false);
     })();
   }, [query]);
 
   return (
     <div>
-
-      <Link to={`/pokemons/${pokemon.name}`}>
-        <div>
-          {pokemon.name}
-          <img src={pokemon.name ? pokemon.sprites.back_default : ''} />
-        </div>
-      </Link>
-    
+      {console.log(pokemonState)}
+      <Card pokemonInfo={pokemonState} />
+      {loading && <AnimatedIcon />}
     </div>
 
   );
@@ -38,4 +38,8 @@ const mapDispatchToProps = dispatch => ({
 
 });
 
-export default connect(null, mapDispatchToProps)(UsePokemonSearch);
+const mapStateToProps = state => ({
+  pokemonState: state.pokemon,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsePokemonSearch);

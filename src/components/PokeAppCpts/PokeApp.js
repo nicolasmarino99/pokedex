@@ -5,6 +5,8 @@ import UsePokemonSearch from './UsePokemonSearch';
 import pokemonLogo from '../../assets/imgs/pokemon.svg';
 
 import '../../assets/stlyes/pokeApp.scss';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 
 
 const PokeApp = () => {
@@ -16,16 +18,14 @@ const PokeApp = () => {
     <>
       <div className="poke-app">
         <h1>What Pokemon are you looking for?</h1>
-        <input type="text" placeholder="Search Pokemon, Move, Ability etc..." onChange={handleSubmit}  />
-        <FontAwesomeIcon icon={["fal", "coffee"]} />
+        <div className="searchbar">
+          <FontAwesomeIcon icon={faSearch} size="sm" />
+          <input type="text" placeholder="Search Pokemon, Move, Ability etc..." onChange={handleSubmit}  />
+        </div>
+        
+        <UsePokemonSearch query={query} />
 
-<FontAwesomeIcon icon={["far", "coffee"]} />
-
-<FontAwesomeIcon icon={["fas", "coffee"]} />
-
-<FontAwesomeIcon icon="coffee" />
-
-<FontAwesomeIcon icon={["fab", "github"]} />
+       
         <div className="options">
           {links.map(name => (
             <Link key={name} to={`/${name}`}>
@@ -37,7 +37,7 @@ const PokeApp = () => {
           )) }
         </div>
       </div>
-      <UsePokemonSearch query={query} />
+      
     </>
   );
 };

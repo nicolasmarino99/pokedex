@@ -6,6 +6,10 @@ import { connect } from 'react-redux';
 //import { onEnter, onExit } from '../../animations/gsapAnimations';
 import getData from '../../api';
 import { savePokemonsList, savePokemon } from '../../actions';
+import { Card, AnimatedIcon } from '../Card';
+import Filter from '../Filter';
+
+
 
 const Content = styled.div`
   display: grid;
@@ -19,6 +23,7 @@ const Content = styled.div`
 const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
   const [pokemons, setPokemons] = useState([]);
   const [page, setPage] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   const handleScroll = e => {
     const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
@@ -27,44 +32,45 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
       setPage(prev => (prev + 20));
 
       (async () => {
+        setLoading(true);
         const pokemonsList2 = [];
         const data = await getData(`https://pokeapi.co/api/v2/pokemon?offset=${page + 20}&limit=20`);
         if (data) data.results.forEach(async pokemon => pokemonsList2.push(await getData(`${pokemon.url}`)));
         setPokemons(pokemonsList2);
 
         savePokemonsList(pokemons);
+        setLoading(false);
       })();
     }
   };
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       const pokemonsList = [];
       const data = await getData(`https://pokeapi.co/api/v2/pokemon?offset=${page}&limit=20`);
       if (data) data.results.forEach(async pokemon => pokemonsList.push(await getData(`${pokemon.url}`)));
       setPokemons(pokemonsList);
 
       savePokemonsList(pokemons);
+      setLoading(false);
     })();
   }, [10]);
 
   return (
     <div className="Pokedex">
       <Link to="/"><button className="back-btn" type="button">Logout</button></Link>
+      <Filter />
+      {loading && <AnimatedIcon />}
+     
       <Content onScroll={handleScroll}>
         {(pokemonsList.length > 1 ? pokemonsList : pokemons).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(pokemon => (
           <div key={pokemon.name} onClick={() => savePokemon(pokemon)}>
-            <Link key={pokemon.name} to={`/pokemons/${pokemon.name}`}>
-              <div>
-                {pokemon.name}
-
-                <p>{pokemon.types.map(type => <p>{type.type.name}</p>)}</p>
-                <img alt="pokemon-img" src={pokemon.name ? pokemon.sprites.back_default : ''} />
-              </div>
-            </Link>
+            <Card pokemonInfo={pokemon}/>
           </div>
         ))}
       </Content>
+      
     </div>
   );
 };
