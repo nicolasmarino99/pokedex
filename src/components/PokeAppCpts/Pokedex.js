@@ -8,6 +8,7 @@ import getData from '../../api';
 import { savePokemonsList, savePokemon } from '../../actions';
 import { Card, AnimatedIcon } from '../Card';
 import Filter from '../Filter';
+import pokemonLogo from '../../assets/imgs/pokemon.svg';
 import '../../assets/stlyes/Pokedex.scss';
 
 
@@ -66,7 +67,8 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
         <Link to="/"><button className="back-btn" type="button">Logout</button></Link>
         <Filter />
       </nav>
-      
+      <h2>Pokedex</h2>
+      <img alt="poke-logo" className="pokedex-logo" src={pokemonLogo} />
       
       
       <Content onScroll={handleScroll}>
