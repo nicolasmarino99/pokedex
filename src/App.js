@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Loader from './loaders/Loader';
-import PokeApp from './components/PokeAppCpts/PokeApp';
-import Pokedex from './components/PokeAppCpts/Pokedex';
-import Moves from './components/PokeAppCpts/Moves';
-import Abilities from './components/PokeAppCpts/Abilities';
-import Items from './components/PokeAppCpts/Items';
-import Locations from './components/PokeAppCpts/Locations';
-import TypeCharts from './components/PokeAppCpts/TypeCharts';
+import PokeApp from './pages/PokeApp';
+import Pokedex from './containers/Pokedex';
+import Moves from './pages/Moves';
+import Abilities from './pages/Abilities';
+import Items from './pages/Items';
+import Locations from './pages/Locations';
+import TypeCharts from './pages/TypeCharts';
 
-import Pokemon from './components/PokeAppCpts/Pokemon';
+import Pokemon from './containers/Pokemon';
 
 const App = () => {
   const [state, setState] = useState({ loading: true });
