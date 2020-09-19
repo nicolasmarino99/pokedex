@@ -21,7 +21,7 @@ export const Card = ({ pokemonInfo }) => (
       <p className="name">{pokemonInfo.name}</p>
       <p>{pokemonInfo.name ? pokemonInfo.types.map(type => <p className="tag">{type.type.name}</p>) : ''}</p>
     </div>  
-    <img style={pokemonInfo.name ? {display: "hidden"} : {display: "none"}} alt="pokemon-img" src={pokemonInfo.name ? pokemonInfo.sprites.front_default : ''} />
+    <img style={pokemonInfo.name ? {display: "hidden"} : {display: "none"}} alt="pokemon-img" src={pokemonInfo.name ? pokemonInfo.sprites.other["official-artwork"].front_default : ''} />
     </div>
   </Link>
 
