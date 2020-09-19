@@ -8,16 +8,19 @@ import getData from '../../api';
 import { savePokemonsList, savePokemon } from '../../actions';
 import { Card, AnimatedIcon } from '../Card';
 import Filter from '../Filter';
+import '../../assets/stlyes/Pokedex.scss';
 
 
 
 const Content = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 800px;
-  height: 800px;
-  margin: 0 auto;
-  overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,16%);
+    height: 33em;
+    margin: 0 auto;
+    overflow: auto;
+    grid-gap: 12px;
+    justify-content: center;
+}
 `;
 
 const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
@@ -59,16 +62,20 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
 
   return (
     <div className="Pokedex">
-      <Link to="/"><button className="back-btn" type="button">Logout</button></Link>
-      <Filter />
-      {loading && <AnimatedIcon />}
-     
+      <nav>
+        <Link to="/"><button className="back-btn" type="button">Logout</button></Link>
+        <Filter />
+      </nav>
+      
+      
+      
       <Content onScroll={handleScroll}>
         {(pokemonsList.length > 1 ? pokemonsList : pokemons).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(pokemon => (
           <div key={pokemon.name} onClick={() => savePokemon(pokemon)}>
             <Card pokemonInfo={pokemon}/>
           </div>
         ))}
+        {loading && <AnimatedIcon />}
       </Content>
       
     </div>

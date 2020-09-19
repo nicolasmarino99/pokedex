@@ -17,123 +17,131 @@ $dragon:#7038f8;
 $steel:#b8b8d0;
 $fairy:#f8b3ed;
 
-.normal {
-    background:$normal;
-    &:hover {
-        background: #c7c78f;;
-    }
+@mixin setColor($color) {
+    background: $color;
+    width: 96%;    
 }
-.fire {
-    background:$fire ;
-    &:hover {
-        background: #f78c80;;
+.link-card {
+    display: flex;
+    justify-content: center;
+
+    .normal {
+        background:$normal;
+        &:hover {
+            background: #c7c78f;;
+        }
     }
-}
-.water {
-    background: $water;
-    &:hover {
-        background:#71baff;
+    .fire {
+        background:$fire ;
+        &:hover {
+            background: #f78c80;;
+        }
     }
-}
-.grass {
-    background:$grass ;
-    &:hover {
-        background:#5ee2c3;
+    .water {
+        background: $water;
+        &:hover {
+            background:#71baff;
+        }
     }
-}
-.electric {
-    background:$electric ;
-    &:hover {
-        background:#ffd35a;
+    .grass {
+        background:$grass ;
+        &:hover {
+            background:#5ee2c3;
+        }
     }
-}
-.ice {
-    background:$ice ;
-    &:hover {
-        background:#a9f0f0;
+    .electric {
+        background:$electric ;
+        &:hover {
+            background:#ffd35a;
+        }
     }
-}
-.fighting {
-    background:$fighting ;
-    &:hover {
-        background:#e43a31;
+    .ice {
+        background:$ice ;
+        &:hover {
+            background:#a9f0f0;
+        }
     }
-}
-.poison {
-    background:$poison ;
-    &:hover {
-        background:#cf53cf;
+    .fighting {
+        background:$fighting ;
+        &:hover {
+            background:#e43a31;
+        }
     }
-}
-.ground {
-    background: $ground;
-    &:hover {
-        background:#f7d474;
+    .poison {
+        background:$poison ;
+        &:hover {
+            background:#cf53cf;
+        }
     }
-}
-.flying {
-    background: $flying;
-    &:hover {
-        background:#b49ef8;
+    .ground {
+        background: $ground;
+        &:hover {
+            background:#f7d474;
+        }
     }
-}
-.psychic {
-    background: $psychic;
-    &:hover {
-        background:#fa6e98;
+    .flying {
+        background: $flying;
+        &:hover {
+            background:#b49ef8;
+        }
     }
-}
-.bug {
-    background: $bug;
-    &:hover {
-        background:#c8da27;
+    .psychic {
+        background: $psychic;
+        &:hover {
+            background:#fa6e98;
+        }
     }
-}
-.rock {
-    background:$rock ;
-    &:hover {
-        background:#da8e85;
+    .bug {
+        background: $bug;
+        &:hover {
+            background:#c8da27;
+        }
     }
-}
-.ghost {
-    background:$ghost ;
-    &:hover {
-        background:#a26db8;
+    .rock {
+        background:$rock ;
+        &:hover {
+            background:#da8e85;
+        }
     }
-}
-.dark {
-    background:$dark ;
-    &:hover {
-        background:#705848;
+    .ghost {
+        background:$ghost ;
+        &:hover {
+            background:#a26db8;
+        }
     }
-}
-.dragon {
-    background:$dragon ;
-    &:hover {
-        background:#834ffd;
+    .dark {
+        background:$dark ;
+        &:hover {
+            background:#705848;
+        }
     }
-}
-.steel {
-    background: $steel;
-    &:hover {
-        background:#d3d3ee;
+    .dragon {
+        background:$dragon ;
+        &:hover {
+            background:#834ffd;
+        }
     }
-}
-.fairy {
-    background:$fairy ;
-    &:hover {
-        background:#f7beed;
+    .steel {
+        background: $steel;
+        &:hover {
+            background:#d3d3ee;
+        }
+    }
+    .fairy {
+        background:$fairy ;
+        &:hover {
+            background:#f7beed;
+        }
     }
 }
 
 .Card {
-    width: 13%;
-    margin: auto;
     display: flex;
-    margin-top: 1em;
+    margin-top: .3em;
     border-radius: 13px;
-    padding-top: 1em;
+    padding: 1em;
     justify-content: space-around;
+    width: 100%;
     .info-type {
         p {
             margin: 0;

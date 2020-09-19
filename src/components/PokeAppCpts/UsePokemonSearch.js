@@ -24,7 +24,7 @@ const UsePokemonSearch = ({ query, savePokemon, pokemonState }) => {
   }, [query]);
 
   return (
-    <div>
+    <div id="queried-card">
       {console.log(pokemonState)}
       <Card pokemonInfo={pokemonState} />
       {loading && <AnimatedIcon />}

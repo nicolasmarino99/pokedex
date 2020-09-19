@@ -15,13 +15,13 @@ export const AnimatedIcon = () => (
 
 export const Card = ({ pokemonInfo }) => (
 
-  <Link key={pokemonInfo.name} to={`/pokemons/${pokemonInfo.name}`} >
+  <Link className="link-card" key={pokemonInfo.name} to={`/pokemons/${pokemonInfo.name}`} >
     <div className={`Card ${pokemonInfo.name ? pokemonInfo.types[0].type.name : ''}`}>
     <div className='info-type'>
       <p className="name">{pokemonInfo.name}</p>
       <p>{pokemonInfo.name ? pokemonInfo.types.map(type => <p className="tag">{type.type.name}</p>) : ''}</p>
     </div>  
-    <img style={pokemonInfo.name ? {display: "hidden"} : {display: "none"}} alt="pokemon-img" src={pokemonInfo.name ? pokemonInfo.sprites.back_default : ''} />
+    <img style={pokemonInfo.name ? {display: "hidden"} : {display: "none"}} alt="pokemon-img" src={pokemonInfo.name ? pokemonInfo.sprites.front_default : ''} />
     </div>
   </Link>
 
