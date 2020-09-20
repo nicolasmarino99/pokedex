@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,13 +14,9 @@ const Filter = () => {
             labore wes anderson cred nesciunt sapiente ea proident.
           </div>
         </Collapse>
-        <Button
-          onClick={() => setOpen(!open)}
-          aria-controls="example-collapse-text"
-          aria-expanded={open}
-        >
+        <button onClick={() => setOpen(!open)} >
           filters
-        </Button>
+        </button>
         
       </>
     );
