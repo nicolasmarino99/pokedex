@@ -1,11 +1,8 @@
 import React from 'react';
 import FilterNav from '../components/FilterNav';
 
-
-const Moves = (props) => {
-    return (
-      <FilterNav />
-    );
-}
+const Moves = () => (
+  <FilterNav />
+);
 
 export default Moves;

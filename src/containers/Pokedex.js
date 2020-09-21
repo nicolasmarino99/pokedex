@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
-//import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-//import { onEnter, onExit } from '../../animations/gsapAnimations';
+import PropTypes from 'prop-types';
 import getData from '../api';
 import { savePokemonsList, savePokemon } from '../actions';
 import { Card, AnimatedIcon } from '../components/Card';
 import pokemonLogo from '../assets/imgs/pokemon.svg';
 import '../assets/stlyes/Pokedex.scss';
 import FilterNav from '../components/FilterNav';
-
-
 
 const Content = styled.div`
     display: grid;
@@ -62,41 +59,21 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
 
   return (
     <div className="Pokedex">
-      
       <FilterNav />
-      
       <h2>Pokedex</h2>
       <img alt="poke-logo" className="pokedex-logo" src={pokemonLogo} />
-      
-      
       <Content onScroll={handleScroll}>
-        {(pokemonsList.length > 1 ? pokemonsList : pokemons).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(pokemon => (
-          <div key={pokemon.name} onClick={() => savePokemon(pokemon)}>
-            <Card pokemonInfo={pokemon}/>
-          </div>
+        {(pokemonsList.length > 1
+          ? pokemonsList : pokemons).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(pokemon => (
+            <div className="foo" key={pokemon.name} onClick={() => savePokemon(pokemon)} role="button" aria-hidden="true">
+              <Card pokemonInfo={pokemon} />
+            </div>
         ))}
         {loading && <AnimatedIcon />}
       </Content>
-      
     </div>
   );
 };
-
-/*
- <Header />
-    <div className="Pokedex">
-      { routes.map(({ path, name, Component }) => (
-        <Route key={name} path={path} exact>
-          { ({ match }) => (
-            <CSSTransition in={match != null} timeout={1200} classNames="page" onEnter={onEnter} onExit={onExit} unmountOnExit>
-              <div className="page">
-                <Component />
-              </div>
-            </CSSTransition>
-          )}
-        </Route>
-      ))}
-    </div> */
 
 const mapDispatchToProps = dispatch => ({
   savePokemonsList: pokemonsList => dispatch(savePokemonsList(pokemonsList)),
@@ -106,5 +83,11 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => ({
   pokemonsList: state.pokemonsList,
 });
+
+Pokedex.propTypes = {
+  savePokemonsList: PropTypes.func.isRequired,
+  savePokemon: PropTypes.func.isRequired,
+  pokemonsList: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Pokedex);

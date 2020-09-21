@@ -14,14 +14,13 @@ const PokemonStats = ({ pokemon }) => {
     console.log(buttonName);
   };
 
-  const buttonNames = ['about', 'base-stats', 'evolution', 'moves']; 
+  const buttonNames = ['about', 'base-stats', 'evolution', 'moves'];
   return (
     <div className="stats">
-        <div className="buttons">
-          {buttonNames.map(btnName => (<button onClick={handleClick}>{btnName}</button>))}
-        </div>
-      
-     
+      <div className="buttons">
+        {buttonNames.map(btnName => (<button onClick={handleClick}>{btnName}</button>))}
+      </div>
+
       <Collapse in={open}>
         <div id="example-collapse-text">
           {renderPokemonInfo(buttonName, pokemon)}

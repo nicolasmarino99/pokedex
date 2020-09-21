@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import getData from '../../api';
 import { savePokemon } from '../../actions';
 import { Card, AnimatedIcon } from '../../components/Card';
-
-
 
 const UsePokemonSearch = ({ query, savePokemon, pokemonState }) => {
   const [pokemon, setPokemon] = useState([]);
@@ -23,7 +22,6 @@ const UsePokemonSearch = ({ query, savePokemon, pokemonState }) => {
 
   return (
     <div id="queried-card">
-      {console.log(pokemonState)}
       <Card pokemonInfo={pokemonState} />
       {loading && <AnimatedIcon />}
     </div>
@@ -39,5 +37,11 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => ({
   pokemonState: state.pokemon,
 });
+
+UsePokemonSearch.propTypes = {
+  query: PropTypes.string.isRequired,
+  savePokemon: PropTypes.func.isRequired,
+  pokemonState: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsePokemonSearch);

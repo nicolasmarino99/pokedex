@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import Collapse from 'react-bootstrap/Collapse';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/stlyes/Pokemon.scss';
-
+import PropTypes from 'prop-types';
 import LoveNav from '../components/LoveNav';
 import PokemonStats from '../components/PokemonStats';
 
-const Pokemon = ({ match, pokemon }) => {
+const Pokemon = ({ pokemon }) => {
   const convertFormat = number => {
     const num = `${number}`;
     switch (num.length) {
@@ -17,6 +16,8 @@ const Pokemon = ({ match, pokemon }) => {
         return `#0${num}`;
       case 3:
         return `#${num}`;
+      default:
+        return '';
     }
   };
 
@@ -34,7 +35,7 @@ const Pokemon = ({ match, pokemon }) => {
                   {pokemon.name}
                 </p>
                 <div className="tags">
-                  {pokemon.name ? pokemon.types.map(type => <p className="tag">{type.type.name}</p>) : ''}
+                  {pokemon.name ? pokemon.types.map(type => <p key={type.type.name} className="tag">{type.type.name}</p>) : ''}
                 </div>
               </div>
               <div className="numbers">{convertFormat(pokemon.id)}</div>
@@ -53,5 +54,20 @@ const Pokemon = ({ match, pokemon }) => {
 const mapStateToProps = state => ({
   pokemon: state.pokemon,
 });
+
+Pokemon.propTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.string,
+    id: PropTypes.number,
+    types: PropTypes.arrayOf(PropTypes.object),
+    sprites: PropTypes.shape({
+      other: PropTypes.shape({
+        'official-artwork': PropTypes.shape({
+          front_default: PropTypes.string,
+        }),
+      }),
+    }),
+  }).isRequired,
+};
 
 export default connect(mapStateToProps)(Pokemon);

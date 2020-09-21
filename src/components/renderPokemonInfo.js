@@ -31,7 +31,7 @@ const renderPokemonInfo = (componentName, pokemon) => {
         <div className={componentName}>
 
           {pokemon.name ? pokemon.stats.map(stat => (
-            <p className="tag">
+            <p key={stat.stat.name} className="tag">
               {`${stat.stat.name}: ${stat.base_stat}`}
             </p>
           )) : ''}
@@ -54,6 +54,10 @@ const renderPokemonInfo = (componentName, pokemon) => {
         <div className={componentName}>
           hey
         </div>
+      );
+    default:
+      return (
+        ''
       );
   }
 };

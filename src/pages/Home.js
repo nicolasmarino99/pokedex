@@ -15,9 +15,7 @@ const Home = () => (
         to DM me :)
       </p>
     </div>
-    <form>
-
-    </form>
+    <form />
     i
   </div>
 );
