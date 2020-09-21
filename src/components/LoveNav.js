@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const LoveNav = () => (
   <nav>
     <Link to="/"><FontAwesomeIcon icon={faArrowLeft} size="2x" /></Link>
-    <a><FontAwesomeIcon icon={faHeart} size="2x" /></a>
+    <div><FontAwesomeIcon icon={faHeart} size="2x" /></div>
   </nav>
 );
 
