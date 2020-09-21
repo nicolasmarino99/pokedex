@@ -90,7 +90,130 @@ $fairy:#f8b3ed;
     
 }
 
+.normal-background {
+    background:#e0e0b8;    
+}
+.fire-background {
+    background:#fcaea6;
+    
+}
+.water-background {
+    background: #97cdff;   
+}
+.grass-background {
+    background:#85ccbc;
+    
+}
+.electric-background {
+    background:rgb(226, 184, 68);
+    
+}
+.ice-background {
+    background:#b7dfdf;
+    
+}
+.fighting-background {
+    background:#d86660
+    
+}
+.poison-background {
+    background:#ce70ce;
+    
+}
+.ground-background {
+    background: #e9d396;   
+}
+.flying-background {
+    background: #beacf5;   
+}
+.psychic-background {
+    background: #fd94b4;   
+}
+.bug-background {
+    background: #e0ec6c;   
+}
+.rock-background {
+    background:#d6a7a2;
+    
+}
+.ghost-background {
+    background:#bf90d1;
+    
+}
+.dark-background {
+    background:#be9f89;
+    
+}
+.dragon-background {
+    background:#a884fd;
+    
+}
+.steel-background {
+    background: #e3e3f0;   
+}
+.fairy-background {
+    background:#ffd3f8;
+}
+
 .example-collapse-text {
     background: white;
     border-radius: 150px 150px 0px 0px;
+}
+
+.pk-info-container {
+    height: 100%;
+    .pokemon-info {
+        height: 100%;
+        .pokemon-info-card {
+            margin: auto;
+            width: 31%;
+            height: 65%;
+            border-radius: 74px 74px 0 0;
+            -webkit-box-shadow: 10px 10px 43px 12px rgba(0,0,0,0.51);
+            -moz-box-shadow: 10px 10px 43px 12px rgba(0,0,0,0.51);
+            box-shadow: 10px 10px 43px 12px rgba(0,0,0,0.51);    
+            padding: 3em;
+            .info-type {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 2em;
+                .numbers {
+                    color: white;
+                    font-weight: bold;
+                    padding-top: 5%;
+                    font-size: 1.3em;
+                }
+
+                .name {
+                    margin-left: 8px;
+                    color: white;
+                    margin: 0;
+                    font-weight: bold;
+                    font-size: 2.1em;  
+                    text-transform: capitalize;
+                }
+                .tags {
+                    display: flex;
+                    .tag {
+                        border-radius: 15px;
+                        background: #ffffff33;
+                        color: white;
+                        text-decoration: none;
+                        font-size: 12px;
+                        padding: 5px 12px;
+                        margin: 6px;
+                    }
+                }
+
+            }
+           
+            
+            img {
+                height: 89%;
+                position: relative;
+                z-index: 5;
+                top: -34px;
+            }
+        }
+    }
 }

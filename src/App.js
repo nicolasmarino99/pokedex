@@ -9,7 +9,6 @@ import Abilities from './pages/Abilities';
 import Items from './pages/Items';
 import Locations from './pages/Locations';
 import TypeCharts from './pages/TypeCharts';
-
 import Pokemon from './containers/Pokemon';
 
 const App = () => {
