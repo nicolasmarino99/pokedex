@@ -12,6 +12,13 @@ import FilterNav from '../components/FilterNav';
 const Content = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill,16%);
+    @media only screen 
+        and (min-device-width: 359px) 
+        and (max-device-width: 812px) 
+        and (-webkit-min-device-pixel-ratio: 3) { 
+          grid-template-columns: repeat(auto-fill,44%);
+          margin-left: 4%;
+        }
     height: 33em;
     margin: 0 auto;
     overflow: auto;
@@ -55,7 +62,7 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
       savePokemonsList(pokemons);
       setLoading(false);
     })();
-  }, [10]);
+  }, []);
 
   return (
     <div className="Pokedex">

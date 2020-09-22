@@ -5,6 +5,14 @@
     border-radius: 32px;
     position: relative;
     top: -7%;
+    @media only screen 
+    and (min-device-width: 359px) 
+    and (max-device-width: 812px) 
+    and (-webkit-min-device-pixel-ratio: 3) { 
+        top: 26em;
+        position: relative;
+        width: 132%;
+    }
     .buttons {
         display: flex;
         justify-content: space-around;

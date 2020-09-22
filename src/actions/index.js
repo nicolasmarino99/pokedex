@@ -3,10 +3,7 @@ export const savePokemon = pokemon => ({
   pokemon,
 });
 
-export const savePokemonsList = pokemonsList => {
-  console.log(pokemonsList, 'savelist');
-  return ({
-    type: 'SAVE_POKEMONS_LIST',
-    pokemonsList,
-  });
-};
+export const savePokemonsList = pokemonsList => ({
+  type: 'SAVE_POKEMONS_LIST',
+  pokemonsList,
+});

@@ -3,7 +3,6 @@ const pokemonsListReducer = (state = [], actions) => {
   switch (actions.type) {
     case 'SAVE_POKEMONS_LIST':
       newState = [...Object.values(state), ...actions.pokemonsList];
-      console.log(newState, 'newsatte');
       return newState;
     default:
       return state;

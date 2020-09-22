@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Collapse from 'react-bootstrap/Collapse';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { faArrowLeft, faGripHorizontal } from '@fortawesome/free-solid-svg-icons';
+import { faGripHorizontal } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Filter = () => {
@@ -16,9 +16,9 @@ const Filter = () => {
           labore wes anderson cred nesciunt sapiente ea proident.
         </div>
       </Collapse>
-      <a onClick={() => setOpen(!open)}>
+      <div className="filter" aria-hidden="true" onClick={() => setOpen(!open)}>
         <FontAwesomeIcon icon={faGripHorizontal} size="sm" />
-      </a>
+      </div>
 
     </>
   );

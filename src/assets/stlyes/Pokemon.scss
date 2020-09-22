@@ -173,6 +173,17 @@ $fairy:#f8b3ed;
             -moz-box-shadow: 10px 10px 43px 12px rgba(0,0,0,0.51);
             box-shadow: 10px 10px 43px 12px rgba(0,0,0,0.51);    
             padding: 3em;
+            @media only screen 
+            and (min-device-width: 359px) 
+            and (max-device-width: 812px) 
+            and (-webkit-min-device-pixel-ratio: 3) { 
+                width: 100%;
+                top: 0;
+                position: absolute;
+                height: 100%;
+                border-radius: 0; 
+                box-shadow: 0;
+            }
             .info-type {
                 display: flex;
                 justify-content: space-between;
@@ -213,6 +224,16 @@ $fairy:#f8b3ed;
                 position: relative;
                 z-index: 5;
                 top: -34px;
+                @media only screen 
+                and (min-device-width: 359px) 
+                and (max-device-width: 812px) 
+                and (-webkit-min-device-pixel-ratio: 3) { 
+                    height: 16em;
+                    position: relative;
+                    z-index: 5;
+                    top: 1em;
+                    left: 3%;
+                }
             }
         }
     }

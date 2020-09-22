@@ -142,6 +142,13 @@ $fairy:#f8b3ed;
     padding: 1em 1em 0;
     justify-content: space-between;
     width: 100%;
+    @media only screen 
+    and (min-device-width: 359px) 
+    and (max-device-width: 812px) 
+    and (-webkit-min-device-pixel-ratio: 3) { 
+        width: 105%;
+    }
+    
     align-items: center;
     .info-type {
         display: flex;
@@ -158,6 +165,12 @@ $fairy:#f8b3ed;
             font-weight: bold;
             font-size: 1.1em;  
             text-transform: capitalize;
+            @media only screen 
+            and (min-device-width: 359px) 
+            and (max-device-width: 812px) 
+            and (-webkit-min-device-pixel-ratio: 3) { 
+                font-size: .8em;
+            }    
         }
         .tag {
             border-radius: 6px;
@@ -167,6 +180,15 @@ $fairy:#f8b3ed;
             font-size: 12px;
             padding: 0 5px;
             margin: 6px;
+            @media only screen 
+            and (min-device-width: 359px) 
+            and (max-device-width: 812px) 
+            and (-webkit-min-device-pixel-ratio: 3) { 
+                font-size: 10px;
+                padding: 0 4px;
+                margin: 6px 0;
+            }
+            
         }
 
         
@@ -179,5 +201,11 @@ $fairy:#f8b3ed;
         height: 8em;
         position: relative;
         bottom: -7%;
+        @media only screen 
+        and (min-device-width: 359px) 
+        and (max-device-width: 812px) 
+        and (-webkit-min-device-pixel-ratio: 3) { 
+            right: 26%;
+        }
     }
 }

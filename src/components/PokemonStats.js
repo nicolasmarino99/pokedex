@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Collapse from 'react-bootstrap/Collapse';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { PropTypes } from 'prop-types';
 import renderPokemonInfo from './renderPokemonInfo';
 import '../assets/stlyes/PokemonStats.scss';
 
@@ -17,7 +18,7 @@ const PokemonStats = ({ pokemon }) => {
   return (
     <div className="stats">
       <div className="buttons">
-        {buttonNames.map(btnName => (<button onClick={handleClick}>{btnName}</button>))}
+        {buttonNames.map(btnName => (<button key={btnName} type="button" onClick={handleClick}>{btnName}</button>))}
       </div>
 
       <Collapse in={open}>
@@ -28,6 +29,10 @@ const PokemonStats = ({ pokemon }) => {
 
     </div>
   );
+};
+
+PokemonStats.propTypes = {
+  pokemon: PropTypes.shape({}).isRequired,
 };
 
 export default PokemonStats;
