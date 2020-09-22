@@ -1,66 +1,80 @@
-# Phoom a JavaScript Platformer game
+# A Pokedex made with React
 
-Phoom is a Platformer game built with Phaserjs
 
 ## Table of Contents
 
 - [Objective](#Objective)
-- [Learning process](#Learning-process)
-- [Gameplay](#Gameplay)
+- [Live Version](#LiveVersion)
 - [Technologies Used](#Technologies-Used)
 - [Install in Your local Machine](#Install-in-Your-local-Machine)
 - [Acknowledgments](#Acknowledgments)
 
 ### Objective
 
-The main goal of this project is to explore and learn the javascript game engine 'phaser', integrating modern technologies (EcmaScript, webpack, npm) for extending the capabilities of the tool (phaser) while testing some code and consuming third party API's.
+The Objective was to the redux and react for filter and transform data from an external Api. In this case I chose a pokemon Api. 
 
-In this game you could find:
+In this app you could find:
 
-- A fully functional hero with 3 types of attacks, jumps, and slides
-- A set of enemies moving and attacking automatically
-- A nice level design with tiles, with a paralax background
-- A clock and recolected gems for computing scores
-- A leaderboard that shows up at the end of each level
-- Nice background music
-- Nice User experience 
-- Nice set of animations
+- A navbar that automaticly filters a pokemon based on its ID or name.  
+- A pokedex with an infinite scroller
+- A nice UI design
+- Routes to provide extra info
 
 The following features are under construction:
 
-- Health and item's manager 
-- Combat system between characters
-- Enemies AI
-- Enemies health
-- async testing 
-
+- evolution chains 
+- Moves charachteristics
+- Testing
+- extra filters
  
 
 [Up](#Table-of-Contents)
 
-### Learning process
-
-I decided to integrate a gitBook documentation with this repository for showing step by step how I made this project. The book is still in progress though.
-
-[Make phoom step by step](https://us-central1-js-capstone-backend.cloudfunctions.net/api/)
-
-
-[Up](#Table-of-Contents)
-
-### Gameplay
-
-1. #### Start Screen
-
-The velocity of the hero is faster for show you the entire map.
-
+### LiveVersion
+Enter to (Pokedex99)[https://pokedex99.herokuapp.com/pokedex]
+1. #### Screenshots Desktop App.
+##### Home page
 <p align="center">
-<img src="src/assets/gif/phoom.gif">
+<img src="src/assets/imgs/app.jpg">
 </p>
 
-When finish the level, it should appear the leaderboard
-
+##### Search Pokemons
 <p align="center">
-<img src="src/assets/gif/phoomLB.gif">
+<img src="src/assets/imgs/apppk.jpg">
+</p>
+
+##### Pokemon Stats
+<p align="center">
+<img src="src/assets/imgs/pk.jpg">
+</p>
+
+##### Home page
+<p align="center">
+<img src="src/assets/imgs/pokedex.jpg">
+</p>
+
+
+
+2. #### Screenshots Mobile App.
+
+##### Home page
+<p align="center">
+<img src="src/assets/imgs/appM.jpg">
+</p>
+
+##### Search Pokemons
+<p align="center">
+<img src="src/assets/imgs/apppkM.jpg">
+</p>
+
+##### Pokemon Stats
+<p align="center">
+<img src="src/assets/imgs/pkM.jpg">
+</p>
+
+##### Home page
+<p align="center">
+<img src="src/assets/imgs/pokedexM.jpg">
 </p>
 
 
@@ -68,13 +82,14 @@ When finish the level, it should appear the leaderboard
 
 ### Languages and technologies used 
 
-- Phaser 3
+- React
+- Redux
 - JavaScript
 - Babel
 - ESlint
 - npm
 - Webpack
-- HTML/CSS
+- HTML/SCSS
 - Nodejs
 - third party API
 
@@ -99,8 +114,7 @@ Use your terminal and run the commands after each instruction.
 
 ## Acknowledgements
 
-- ShwiggityShwag for the main music
-- So many assets that I don't have the names. I used [opengameart.org](https://opengameart.org/) and [itch.io](https://itch.io/) Thanks to all the artist. 
+- Saepul Nahwan for the design
 
 
 [Up](#Table-of-Contents)
