@@ -1,68 +1,134 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Phoom a JavaScript Platformer game
 
-## Available Scripts
+Phoom is a Platformer game built with Phaserjs
 
-In the project directory, you can run:
+## Table of Contents
 
-### `yarn start`
+- [Objective](#Objective)
+- [Learning process](#Learning-process)
+- [Gameplay](#Gameplay)
+- [Technologies Used](#Technologies-Used)
+- [Install in Your local Machine](#Install-in-Your-local-Machine)
+- [Acknowledgments](#Acknowledgments)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Objective
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The main goal of this project is to explore and learn the javascript game engine 'phaser', integrating modern technologies (EcmaScript, webpack, npm) for extending the capabilities of the tool (phaser) while testing some code and consuming third party API's.
 
-### `yarn test`
+In this game you could find:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- A fully functional hero with 3 types of attacks, jumps, and slides
+- A set of enemies moving and attacking automatically
+- A nice level design with tiles, with a paralax background
+- A clock and recolected gems for computing scores
+- A leaderboard that shows up at the end of each level
+- Nice background music
+- Nice User experience 
+- Nice set of animations
 
-### `yarn build`
+The following features are under construction:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Health and item's manager 
+- Combat system between characters
+- Enemies AI
+- Enemies health
+- async testing 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+ 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Up](#Table-of-Contents)
 
-### `yarn eject`
+### Learning process
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I decided to integrate a gitBook documentation with this repository for showing step by step how I made this project. The book is still in progress though.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Make phoom step by step](https://us-central1-js-capstone-backend.cloudfunctions.net/api/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[Up](#Table-of-Contents)
 
-## Learn More
+### Gameplay
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. #### Start Screen
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The velocity of the hero is faster for show you the entire map.
 
-### Code Splitting
+<p align="center">
+<img src="src/assets/gif/phoom.gif">
+</p>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+When finish the level, it should appear the leaderboard
 
-### Analyzing the Bundle Size
+<p align="center">
+<img src="src/assets/gif/phoomLB.gif">
+</p>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+[Up](#Table-of-Contents)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Languages and technologies used 
 
-### Advanced Configuration
+- Phaser 3
+- JavaScript
+- Babel
+- ESlint
+- npm
+- Webpack
+- HTML/CSS
+- Nodejs
+- third party API
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+[Up](#Table-of-Contents)
 
-### Deployment
+### Install in Your local Machine
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+To run the scripts **npm** is required. To get npm you have to install [Node.js](https://nodejs.org). Follow the installation instructions for your system Mac, Linux or Windows.
 
-### `yarn build` fails to minify
+Use your terminal and run the commands after each instruction.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+| Command                                             | Description                                           |
+| --------------------------------------------------- | ----------------------------------------------------- |
+| `git clone https://github.com/nicolasmarino99/Phoom.git` | Clone the repository to you computer                  |
+| `cd Phoom`                                          | Navigate to the newly created folder                  |
+| `npm install`                                       | Install dependencies and launch browser with examples |
+| `npm run start`                                         | Makes the build and starts the development server     |
+|                                                     | Press `Ctrl + c` to kill **http-server** process      |
+| `http://localhost:8080`                             | Visit this link to play the game                      |
+
+[Up](#Table-of-Contents)
+
+## Acknowledgements
+
+- ShwiggityShwag for the main music
+- So many assets that I don't have the names. I used [opengameart.org](https://opengameart.org/) and [itch.io](https://itch.io/) Thanks to all the artist. 
+
+
+[Up](#Table-of-Contents)
+
+## Author
+
+:man: **Nicolás Mariño Parra**
+
+- Github: [@nicolasmarino99](https://github.com/nicolasmarino99)
+- Twitter: [@nicolasmarino99](https://twitter.com/nicolasmarino99)
+- Linkedin: [Nicolás Mariño Parra](https://www.linkedin.com/in/nicol%C3%A1s-mari%C3%B1o-parra-45a707177/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/nicolasmarino99/Phoom.git/issues).
+
+1. Fork it (https://github.com/nicolasmarino99/Phoom.git/fork)
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create a new Pull Request
+
+## Show your support
+
+Give a ⭐️ if you enjoyed this project!
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
