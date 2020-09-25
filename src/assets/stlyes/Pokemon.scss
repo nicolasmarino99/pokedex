@@ -18,223 +18,234 @@ $steel:#b8b8d0;
 $fairy:#f8b3ed;
 
 .normal {
-    background:$normal;
-    
+  background: $normal;
 }
+
 .fire {
-    background:$fire ;
-    
+  background: $fire;
 }
+
 .water {
-    background: $water;
-    
+  background: $water;
 }
+
 .grass {
-    background:$grass ;
-    
+  background: $grass;
 }
+
 .electric {
-    background:$electric ;
-    
+  background: $electric;
 }
+
 .ice {
-    background:$ice ;
-    
+  background: $ice;
 }
+
 .fighting {
-    background:$fighting ;
-    
+  background: $fighting;
 }
+
 .poison {
-    background:$poison ;
-    
+  background: $poison;
 }
+
 .ground {
-    background: $ground;
-    
+  background: $ground;
 }
+
 .flying {
-    background: $flying;
-    
+  background: $flying;
 }
+
 .psychic {
-    background: $psychic;
-    
+  background: $psychic;
 }
+
 .bug {
-    background: $bug;
-    
+  background: $bug;
 }
+
 .rock {
-    background:$rock ;
-    
+  background: $rock;
 }
+
 .ghost {
-    background:$ghost ;
-    
+  background: $ghost;
 }
+
 .dark {
-    background:$dark ;
-    
+  background: $dark;
 }
+
 .dragon {
-    background:$dragon ;
-    
+  background: $dragon;
 }
+
 .steel {
-    background: $steel;
-    
+  background: $steel;
 }
+
 .fairy {
-    background:$fairy ;
-    
+  background: $fairy;
 }
 
 .normal-background {
-    background:#e0e0b8;    
+  background: #e0e0b8;
 }
+
 .fire-background {
-    background:#fcaea6;
-    
+  background: #fcaea6;
 }
+
 .water-background {
-    background: #97cdff;   
+  background: #97cdff;
 }
+
 .grass-background {
-    background:#85ccbc;
-    
+  background: #85ccbc;
 }
+
 .electric-background {
-    background:rgb(226, 184, 68);
-    
+  background: rgb(226, 184, 68);
 }
+
 .ice-background {
-    background:#b7dfdf;
-    
+  background: #b7dfdf;
 }
+
 .fighting-background {
-    background:#d86660
-    
+  background: #d86660;
 }
+
 .poison-background {
-    background:#ce70ce;
-    
+  background: #ce70ce;
 }
+
 .ground-background {
-    background: #e9d396;   
+  background: #e9d396;
 }
+
 .flying-background {
-    background: #beacf5;   
+  background: #beacf5;
 }
+
 .psychic-background {
-    background: #fd94b4;   
+  background: #fd94b4;
 }
+
 .bug-background {
-    background: #e0ec6c;   
+  background: #e0ec6c;
 }
+
 .rock-background {
-    background:#d6a7a2;
-    
+  background: #d6a7a2;
 }
+
 .ghost-background {
-    background:#bf90d1;
-    
+  background: #bf90d1;
 }
+
 .dark-background {
-    background:#be9f89;
-    
+  background: #be9f89;
 }
+
 .dragon-background {
-    background:#a884fd;
-    
+  background: #a884fd;
 }
+
 .steel-background {
-    background: #e3e3f0;   
+  background: #e3e3f0;
 }
+
 .fairy-background {
-    background:#ffd3f8;
+  background: #ffd3f8;
 }
 
 .example-collapse-text {
-    background: white;
-    border-radius: 150px 150px 0px 0px;
+  background: white;
+  border-radius: 150px 150px 0 0;
 }
 
 .pk-info-container {
+  height: 100%;
+
+  .pokemon-info {
     height: 100%;
-    .pokemon-info {
+
+    .pokemon-info-card {
+      margin: auto;
+      width: 31%;
+      height: 65%;
+      border-radius: 74px 74px 0 0;
+      -webkit-box-shadow: 10px 10px 43px 12px rgba(0, 0, 0, 0.51);
+      -moz-box-shadow: 10px 10px 43px 12px rgba(0, 0, 0, 0.51);
+      box-shadow: 10px 10px 43px 12px rgba(0, 0, 0, 0.51);
+      padding: 3em;
+
+      @media only screen
+
+        and (min-device-width: 359px)
+        and (max-device-width: 812px)
+        and (-webkit-min-device-pixel-ratio: 3) {
+        width: 100%;
+        top: 0;
+        position: absolute;
         height: 100%;
-        .pokemon-info-card {
-            margin: auto;
-            width: 31%;
-            height: 65%;
-            border-radius: 74px 74px 0 0;
-            -webkit-box-shadow: 10px 10px 43px 12px rgba(0,0,0,0.51);
-            -moz-box-shadow: 10px 10px 43px 12px rgba(0,0,0,0.51);
-            box-shadow: 10px 10px 43px 12px rgba(0,0,0,0.51);    
-            padding: 3em;
-            @media only screen 
-            
-            and (max-device-width: 812px) 
-            and (-webkit-min-device-pixel-ratio: 3) { 
-                width: 100%;
-                top: 0;
-                position: absolute;
-                height: 100%;
-                border-radius: 0; 
-                box-shadow: 0;
-            }
-            .info-type {
-                display: flex;
-                justify-content: space-between;
-                padding-top: 2em;
-                .numbers {
-                    color: white;
-                    font-weight: bold;
-                    padding-top: 5%;
-                    font-size: 1.3em;
-                }
+        border-radius: 0;
+      }
 
-                .name {
-                    margin-left: 8px;
-                    color: white;
-                    margin: 0;
-                    font-weight: bold;
-                    font-size: 2.1em;  
-                    text-transform: capitalize;
-                }
-                .tags {
-                    display: flex;
-                    .tag {
-                        border-radius: 15px;
-                        background: #ffffff33;
-                        color: white;
-                        text-decoration: none;
-                        font-size: 12px;
-                        padding: 5px 12px;
-                        margin: 6px;
-                    }
-                }
+      .info-type {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2em;
 
-            }
-           
-            
-            img {
-                height: 89%;
-                position: relative;
-                z-index: 5;
-                top: -34px;
-                @media only screen 
-                and (min-device-width: 359px) 
-                and (max-device-width: 812px) 
-                and (-webkit-min-device-pixel-ratio: 3) { 
-                    height: 16em;
-                    position: relative;
-                    z-index: 5;
-                    top: 1em;
-                    left: 3%;
-                }
-            }
+        .numbers {
+          color: white;
+          font-weight: bold;
+          padding-top: 5%;
+          font-size: 1.3em;
         }
+
+        .name {
+          margin-left: 8px;
+          color: white;
+          font-weight: bold;
+          font-size: 2.1em;
+          text-transform: capitalize;
+        }
+
+        .tags {
+          display: flex;
+
+          .tag {
+            border-radius: 15px;
+            background: #fff3;
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 5px 12px;
+            margin: 6px;
+          }
+        }
+      }
+
+      img {
+        height: 89%;
+        position: relative;
+        z-index: 5;
+        top: -34px;
+
+        @media only screen
+          and (min-device-width: 359px)
+          and (max-device-width: 812px)
+          and (-webkit-min-device-pixel-ratio: 3) {
+          height: 16em;
+          position: relative;
+          z-index: 5;
+          top: 1em;
+          left: 3%;
+        }
+      }
     }
+  }
 }

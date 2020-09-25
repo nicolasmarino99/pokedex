@@ -18,194 +18,233 @@ $steel:#b8b8d0;
 $fairy:#f8b3ed;
 
 @mixin setColor($color) {
-    background: $color;
-    width: 96%;    
+  background: $color;
+  width: 96%;
 }
-.link-card {
-    display: flex;
-    justify-content: center;
 
-    .normal {
-        background:$normal;
-        &:hover {
-            background: #c7c78f;;
-        }
+.link-card {
+  display: flex;
+  justify-content: center;
+
+  .normal {
+    background: $normal;
+
+    &:hover {
+      background: #c7c78f;
     }
-    .fire {
-        background:$fire ;
-        &:hover {
-            background: #f78c80;;
-        }
+  }
+
+  .fire {
+    background: $fire;
+
+    &:hover {
+      background: #f78c80;
     }
-    .water {
-        background: $water;
-        &:hover {
-            background:#71baff;
-        }
+  }
+
+  .water {
+    background: $water;
+
+    &:hover {
+      background: #71baff;
     }
-    .grass {
-        background:$grass ;
-        &:hover {
-            background:#5ee2c3;
-        }
+  }
+
+  .grass {
+    background: $grass;
+
+    &:hover {
+      background: #5ee2c3;
     }
-    .electric {
-        background:$electric ;
-        &:hover {
-            background:#ffd35a;
-        }
+  }
+
+  .electric {
+    background: $electric;
+
+    &:hover {
+      background: #ffd35a;
     }
-    .ice {
-        background:$ice ;
-        &:hover {
-            background:#a9f0f0;
-        }
+  }
+
+  .ice {
+    background: $ice;
+
+    &:hover {
+      background: #a9f0f0;
     }
-    .fighting {
-        background:$fighting ;
-        &:hover {
-            background:#e43a31;
-        }
+  }
+
+  .fighting {
+    background: $fighting;
+
+    &:hover {
+      background: #e43a31;
     }
-    .poison {
-        background:$poison ;
-        &:hover {
-            background:#cf53cf;
-        }
+  }
+
+  .poison {
+    background: $poison;
+
+    &:hover {
+      background: #cf53cf;
     }
-    .ground {
-        background: $ground;
-        &:hover {
-            background:#f7d474;
-        }
+  }
+
+  .ground {
+    background: $ground;
+
+    &:hover {
+      background: #f7d474;
     }
-    .flying {
-        background: $flying;
-        &:hover {
-            background:#b49ef8;
-        }
+  }
+
+  .flying {
+    background: $flying;
+
+    &:hover {
+      background: #b49ef8;
     }
-    .psychic {
-        background: $psychic;
-        &:hover {
-            background:#fa6e98;
-        }
+  }
+
+  .psychic {
+    background: $psychic;
+
+    &:hover {
+      background: #fa6e98;
     }
-    .bug {
-        background: $bug;
-        &:hover {
-            background:#c8da27;
-        }
+  }
+
+  .bug {
+    background: $bug;
+
+    &:hover {
+      background: #c8da27;
     }
-    .rock {
-        background:$rock ;
-        &:hover {
-            background:#da8e85;
-        }
+  }
+
+  .rock {
+    background: $rock;
+
+    &:hover {
+      background: #da8e85;
     }
-    .ghost {
-        background:$ghost ;
-        &:hover {
-            background:#a26db8;
-        }
+  }
+
+  .ghost {
+    background: $ghost;
+
+    &:hover {
+      background: #a26db8;
     }
-    .dark {
-        background:$dark ;
-        &:hover {
-            background:#705848;
-        }
+  }
+
+  .dark {
+    background: $dark;
+
+    &:hover {
+      background: #705848;
     }
-    .dragon {
-        background:$dragon ;
-        &:hover {
-            background:#834ffd;
-        }
+  }
+
+  .dragon {
+    background: $dragon;
+
+    &:hover {
+      background: #834ffd;
     }
-    .steel {
-        background: $steel;
-        &:hover {
-            background:#d3d3ee;
-        }
+  }
+
+  .steel {
+    background: $steel;
+
+    &:hover {
+      background: #d3d3ee;
     }
-    .fairy {
-        background:$fairy ;
-        &:hover {
-            background:#f7beed;
-        }
+  }
+
+  .fairy {
+    background: $fairy;
+
+    &:hover {
+      background: #f7beed;
     }
+  }
 }
 
 .Card {
-    display: flex;
-    margin-top: .3em;
-    border-radius: 13px;
-    padding: 1em 1em 0;
-    justify-content: space-between;
-    width: 100%;
-    @media only screen 
-    and (min-device-width: 359px) 
-    and (max-device-width: 812px) 
-    and (-webkit-min-device-pixel-ratio: 3) { 
-        width: 105%;
-    }
-    
-    align-items: center;
-    .info-type {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 2em;
-        p {
-            margin: 0;
-        }
-        .name {
-            margin-left: 8px;
-            color: white;
-            margin: 0;
-            font-weight: bold;
-            font-size: 1.1em;  
-            text-transform: capitalize;
-            @media only screen 
-            and (min-device-width: 359px) 
-            and (max-device-width: 812px) 
-            and (-webkit-min-device-pixel-ratio: 3) { 
-                font-size: .8em;
-            }    
-        }
-        .tag {
-            border-radius: 6px;
-            background: #ffffff33;
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-            padding: 0 5px;
-            margin: 6px;
-            @media only screen 
-            and (min-device-width: 359px) 
-            and (max-device-width: 812px) 
-            and (-webkit-min-device-pixel-ratio: 3) { 
-                font-size: 10px;
-                padding: 0 4px;
-                margin: 6px 0;
-            }
-            
-        }
+  display: flex;
+  margin-top: 0.3em;
+  border-radius: 13px;
+  padding: 1em 1em 0;
+  justify-content: space-between;
+  width: 100%;
 
-        
+  @media only screen
+    and (min-device-width: 359px)
+    and (max-device-width: 812px)
+    and (-webkit-min-device-pixel-ratio: 3) {
+    width: 105%;
+  }
+
+  align-items: center;
+
+  .info-type {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2em;
+
+    p {
+      margin: 0;
     }
-    img {
-        transform: scale(1);
-        height: 9em;
-        right: 5%;
-        transform: scale(.8);
-        height: 8em;
-        position: relative;
-        bottom: -7%;
-        @media only screen 
-        and (min-device-width: 359px) 
-        and (max-device-width: 812px) 
-        and (-webkit-min-device-pixel-ratio: 3) { 
-            right: 26%;
-        }
+
+    .name {
+      margin-left: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      text-transform: capitalize;
+
+      @media only screen
+        and (min-device-width: 359px)
+        and (max-device-width: 812px)
+        and (-webkit-min-device-pixel-ratio: 3) {
+        font-size: 0.8em;
+      }
     }
+
+    .tag {
+      border-radius: 6px;
+      background: #fff3;
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+      padding: 0 5px;
+      margin: 6px;
+
+      @media only screen
+        and (min-device-width: 359px)
+        and (max-device-width: 812px)
+        and (-webkit-min-device-pixel-ratio: 3) {
+        font-size: 10px;
+        padding: 0 4px;
+        margin: 6px 0;
+      }
+    }
+  }
+
+  img {
+    right: 5%;
+    transform: scale(0.8);
+    height: 8em;
+    position: relative;
+    bottom: -7%;
+
+    @media only screen
+      and (min-device-width: 359px)
+      and (max-device-width: 812px)
+      and (-webkit-min-device-pixel-ratio: 3) {
+      right: 26%;
+    }
+  }
 }

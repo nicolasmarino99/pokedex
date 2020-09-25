@@ -19,7 +19,7 @@ const Content = styled.div`
           grid-template-columns: repeat(auto-fill,44%);
           margin-left: 4%;
         }
-    height: 33em;
+    height: 29em;
     margin: 0 auto;
     overflow: auto;
     grid-gap: 12px;

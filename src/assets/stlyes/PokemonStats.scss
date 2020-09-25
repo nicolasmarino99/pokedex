@@ -1,36 +1,41 @@
 .stats {
-    width: 31%;
-    background: white;
-    margin: auto;
-    border-radius: 32px;
+  width: 31%;
+  background: white;
+  margin: auto;
+  border-radius: 32px;
+  position: relative;
+  top: -7%;
+
+  @media only screen
+    and (min-device-width: 359px)
+    and (max-device-width: 812px)
+    and (-webkit-min-device-pixel-ratio: 3) {
+    top: 26em;
     position: relative;
-    top: -7%;
-    @media only screen 
-    and (min-device-width: 359px) 
-    and (max-device-width: 812px) 
-    and (-webkit-min-device-pixel-ratio: 3) { 
-        top: 26em;
-        position: relative;
-        width: 132%;
+    width: 132%;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 2em 0 1em 0;
+
+    button {
+      background: none;
+      border: none;
     }
-    .buttons {
-        display: flex;
-        justify-content: space-around;
-        padding: 2em 0 1em 0;
-        button {
-            background: none;
-            border: none;
-        }
+  }
+
+  .example-collapse-text {
+    .base-stats {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2em;
+      align-items: flex-start;
+
+      .tag {
+        margin: 0;
+      }
     }
-    .example-collapse-text {
-        .base-stats {
-            display: flex;
-            flex-direction: column;
-            padding: 0 2em;
-            align-items: flex-start;
-            .tag {
-                margin: 0;
-            }
-        }
-    }
+  }
 }

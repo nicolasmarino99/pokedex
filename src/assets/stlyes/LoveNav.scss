@@ -1,13 +1,14 @@
 .LoveNav {
-    display: flex !important;
-    justify-content: space-between;
-    padding: 3em 7em 0;
-    @media only screen 
-    
-    and (max-device-width: 812px) 
-    and (-webkit-min-device-pixel-ratio: 3) { 
-        position: absolute;
-        z-index: 2;
-        width: 97%;
-    }
+  display: flex !important;
+  justify-content: space-between;
+  padding: 3em 7em 0;
+
+  @media only screen
+
+    and (max-device-width: 812px)
+    and (-webkit-min-device-pixel-ratio: 3) {
+    position: absolute;
+    z-index: 2;
+    width: 97%;
+  }
 }

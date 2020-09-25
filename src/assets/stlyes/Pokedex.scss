@@ -1,23 +1,24 @@
 .Pokedex {
-    
-    h2 {
-        font-size: 2rem;
-        text-align: initial;
-        padding: .5em 3.5em;
+  h2 {
+    font-size: 2rem;
+    text-align: initial;
+    padding: 0.5em 3.5em;
+  }
+
+  .pokedex-logo {
+    filter: contrast(0.5);
+    z-index: -1;
+    position: absolute;
+    top: -12%;
+    right: -24%;
+
+    @media only screen
+      and (min-device-width: 359px)
+      and (max-device-width: 812px)
+      and (-webkit-min-device-pixel-ratio: 3) {
+      top: 15%;
+      right: 17%;
+      height: 15em;
     }
-    .pokedex-logo {
-        filter: contrast(0.5);
-        z-index: -1;
-        position: absolute;
-        top: -12%;
-        right: -24%;
-        @media only screen 
-        and (min-device-width: 359px) 
-        and (max-device-width: 812px) 
-        and (-webkit-min-device-pixel-ratio: 3) { 
-            top: 15%;
-            right: 17%;
-            height: 15em;
-        }
-    }
+  }
 }
