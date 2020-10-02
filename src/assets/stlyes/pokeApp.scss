@@ -5,9 +5,8 @@ html {
     height: 100%;
 
     @media only screen
-      and (min-device-width: 359px)
-      and (max-device-width: 812px)
-      and (-webkit-min-device-pixel-ratio: 3) {
+
+      and (max-device-width: 812px) {
       height: fit-content;
       width: fit-content;
     }
@@ -21,9 +20,8 @@ html {
         height: 100%;
 
         @media only screen
-          and (min-device-width: 359px)
-          and (max-device-width: 812px)
-          and (-webkit-min-device-pixel-ratio: 3) {
+
+          and (max-device-width: 812px) {
           height: fit-content;
         }
       }
@@ -52,9 +50,8 @@ html {
     left: 50%;
 
     @media only screen
-      and (min-device-width: 359px)
-      and (max-device-width: 812px)
-      and (-webkit-min-device-pixel-ratio: 3) {
+
+      and (max-device-width: 812px) {
       bottom: 30%;
       left: 23%;
       height: 14em;
@@ -73,9 +70,8 @@ html {
     width: 32%;
 
     @media only screen
-      and (min-device-width: 359px)
-      and (max-device-width: 812px)
-      and (-webkit-min-device-pixel-ratio: 3) {
+
+      and (max-device-width: 812px) {
       width: 80%;
     }
 
@@ -97,9 +93,8 @@ html {
     margin: 1em auto;
 
     @media only screen
-      and (min-device-width: 359px)
-      and (max-device-width: 812px)
-      and (-webkit-min-device-pixel-ratio: 3) {
+
+      and (max-device-width: 812px) {
       width: 37%;
     }
   }
@@ -110,9 +105,8 @@ html {
     grid-template-columns: repeat(2, 15%);
 
     @media only screen
-      and (min-device-width: 359px)
-      and (max-device-width: 812px)
-      and (-webkit-min-device-pixel-ratio: 3) {
+
+      and (max-device-width: 812px) {
       grid-template-columns: repeat(2, 40%);
     }
 

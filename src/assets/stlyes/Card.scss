@@ -180,9 +180,8 @@ $fairy:#f8b3ed;
   width: 100%;
 
   @media only screen
-    and (min-device-width: 359px)
-    and (max-device-width: 812px)
-    and (-webkit-min-device-pixel-ratio: 3) {
+
+    and (max-device-width: 812px) {
     width: 105%;
   }
 
@@ -206,9 +205,8 @@ $fairy:#f8b3ed;
       text-transform: capitalize;
 
       @media only screen
-        and (min-device-width: 359px)
-        and (max-device-width: 812px)
-        and (-webkit-min-device-pixel-ratio: 3) {
+
+        and (max-device-width: 812px) {
         font-size: 0.8em;
       }
     }
@@ -223,9 +221,8 @@ $fairy:#f8b3ed;
       margin: 6px;
 
       @media only screen
-        and (min-device-width: 359px)
-        and (max-device-width: 812px)
-        and (-webkit-min-device-pixel-ratio: 3) {
+
+        and (max-device-width: 812px) {
         font-size: 10px;
         padding: 0 4px;
         margin: 6px 0;
@@ -241,9 +238,8 @@ $fairy:#f8b3ed;
     bottom: -7%;
 
     @media only screen
-      and (min-device-width: 359px)
-      and (max-device-width: 812px)
-      and (-webkit-min-device-pixel-ratio: 3) {
+
+      and (max-device-width: 812px) {
       right: 26%;
     }
   }

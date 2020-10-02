@@ -4,9 +4,8 @@ nav {
   padding: 3em 7em 0;
 
   @media only screen
-    and (min-device-width: 359px)
-    and (max-device-width: 812px)
-    and (-webkit-min-device-pixel-ratio: 3) {
+
+    and (max-device-width: 812px) {
     padding: 3em 1em 0;
     margin-left: 4%;
   }

@@ -13,9 +13,8 @@
     right: -24%;
 
     @media only screen
-      and (min-device-width: 359px)
-      and (max-device-width: 812px)
-      and (-webkit-min-device-pixel-ratio: 3) {
+
+      and (max-device-width: 812px) {
       top: 15%;
       right: 17%;
       height: 15em;
