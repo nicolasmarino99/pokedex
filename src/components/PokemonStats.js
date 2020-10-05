@@ -13,7 +13,6 @@ const PokemonStats = ({ pokemon }) => {
     setOpen(!open);
     setButtonName(e.target.innerText);
   };
-  console.log(buttonName)
 
   const buttonNames = ['about', 'base-stats', 'evolution', 'moves'];
   return (
