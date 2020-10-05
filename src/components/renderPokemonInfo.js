@@ -1,59 +1,26 @@
 import React from 'react';
+import Evolution from './Evolution';
+import Moves from './Moves';
+import About from './About';
+import BaseStats from './BaseStats';
 
 const renderPokemonInfo = (componentName, pokemon) => {
   switch (componentName) {
-    case 'about':
+    case 'About':
       return (
-        <div className={componentName}>
-          <div className="element">
-            <p className="title">Height</p>
-            <p>
-              {pokemon.name ? `${pokemon.height} cm` : ''}
-            </p>
-          </div>
-          <div className="element">
-            <p className="title">Weight</p>
-            <p>
-              {pokemon.name ? `${pokemon.weight / 10} kg` : ''}
-            </p>
-          </div>
-          <div className="element">
-            <p className="title">Abilities</p>
-            <p>
-              {pokemon.name ? pokemon.abilities.map(hab => (hab.ability.name)) : ''}
-            </p>
-          </div>
-
-        </div>
+        <About pokemon={pokemon} componentName={componentName} />
       );
-    case 'base-stats':
+    case 'Base-Stats':
       return (
-        <div className={componentName}>
-
-          {pokemon.name ? pokemon.stats.map(stat => (
-            <p key={stat.stat.name} className="tag">
-              {`${stat.stat.name}: ${stat.base_stat}`}
-            </p>
-          )) : ''}
-        </div>
+        <BaseStats pokemon={pokemon} componentName={componentName} />
       );
-    case 'evolution':
+    case 'Evolution':
       return (
-        <div className={componentName}>
-          hey
-        </div>
+        <Evolution id={pokemon.id} componentName={componentName} />
       );
-    case 'moves':
+    case 'Moves':
       return (
-        <div className={componentName}>
-          hey
-        </div>
-      );
-    case '':
-      return (
-        <div className={componentName}>
-          hey
-        </div>
+        <Moves pokemon={pokemon} componentName={componentName} />
       );
     default:
       return (

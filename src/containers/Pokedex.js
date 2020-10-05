@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+import _ from 'lodash';
 import getData from '../api';
 import { savePokemonsList, savePokemon } from '../actions';
 import { Card, AnimatedIcon } from '../components/Card';
@@ -13,9 +15,9 @@ const Content = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill,16%);
     @media only screen 
-        and (min-device-width: 359px) 
+        
         and (max-device-width: 812px) 
-        and (-webkit-min-device-pixel-ratio: 3) { 
+        { 
           grid-template-columns: repeat(auto-fill,44%);
           margin-left: 4%;
         }
@@ -50,7 +52,7 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
       })();
     }
   };
-
+  
   useEffect(() => {
     (async () => {
       setLoading(true);
@@ -63,15 +65,15 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
       setLoading(false);
     })();
   }, []);
-
   return (
+  
     <div className="Pokedex">
       <FilterNav />
       <h2>Pokedex</h2>
       <img alt="poke-logo" className="pokedex-logo" src={pokemonLogo} />
       <Content onScroll={handleScroll}>
         {(pokemonsList.length > 1
-          ? pokemonsList : pokemons).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(pokemon => (
+          ? _.uniq(pokemonsList, 'id') : pokemons).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(pokemon => (
             <div className="foo" key={pokemon.name} onClick={() => savePokemon(pokemon)} role="button" aria-hidden="true">
               <Card pokemonInfo={pokemon} />
             </div>

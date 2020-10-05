@@ -10,7 +10,6 @@ export const AnimatedIcon = () => (
     <div className="fa-3x">
       <FontAwesomeIcon icon={faCog} spin />
     </div>
-    <h2>Loding...</h2>
   </section>
 );
 

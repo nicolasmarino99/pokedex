@@ -10,7 +10,7 @@ const PokeApp = () => {
   const [query, setQuery] = useState('');
   const handleSubmit = e => setQuery(e.target.value);
   const links = ['pokedex', 'moves', 'abilities', 'items', 'locations', 'type-charts'];
-
+console.log(query)
   return (
     <>
       <div className="poke-app">
