@@ -33,6 +33,10 @@
       font-size: 13px;
       padding-bottom: 10px;
       z-index: 25;
+      &:hover {
+        color: black;
+        border-bottom: 2px solid #818ee7;
+      }
     }
   }
 
