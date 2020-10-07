@@ -52,7 +52,7 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
       })();
     }
   };
-  
+
   useEffect(() => {
     (async () => {
       setLoading(true);
@@ -66,7 +66,7 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
     })();
   }, []);
   return (
-  
+
     <div className="Pokedex">
       <FilterNav />
       <h2>Pokedex</h2>

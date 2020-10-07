@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const increase = width => keyframes`
   from {
@@ -19,28 +19,27 @@ const ProgressBar = styled.div`
     border-radius: 10px;
 `;
 
+const BaseStats = ({ pokemon, componentName }) => {
+  const higuestStats = [255, 190, 250, 194, 250, 180];
 
-const BaseStats = ({pokemon, componentName}) => {
-    const higuestStats = [255, 190, 250, 194, 250,180]
-    
-    return (
-        <div className={componentName}>
+  return (
+    <div className={componentName}>
 
-          {pokemon.name ? pokemon.stats.map( (stat, i) => (
-            <div key={stat.stat.name} className="tag">
-              <p>{stat.stat.name}</p>
-              <div className="points">
-                <p>{stat.base_stat}</p>
-                <div className="progress-cont">
-                    <ProgressBar width={(stat.base_stat / higuestStats[i])*100}/>
-                </div>
-                
-              </div>
-              
+      {pokemon.name ? pokemon.stats.map((stat, i) => (
+        <div key={stat.stat.name} className="tag">
+          <p>{stat.stat.name}</p>
+          <div className="points">
+            <p>{stat.base_stat}</p>
+            <div className="progress-cont">
+              <ProgressBar width={(stat.base_stat / higuestStats[i]) * 100} />
             </div>
-          )) : ''}
+
+          </div>
+
         </div>
-    );
-}
+      )) : ''}
+    </div>
+  );
+};
 
 export default BaseStats;
