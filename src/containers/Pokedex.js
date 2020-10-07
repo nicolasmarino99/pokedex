@@ -11,8 +11,6 @@ import pokemonLogo from '../assets/imgs/pokemon.svg';
 import '../assets/stlyes/Pokedex.scss';
 import FilterNav from '../components/FilterNav';
 
-
-
 const Content = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill,16%);

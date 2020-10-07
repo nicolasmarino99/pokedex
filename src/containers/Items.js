@@ -78,12 +78,11 @@ const Items = ({ itemsList, saveItemsList, saveItem }) => {
             <div className="foo" key={item.id} onClick={() => saveItem(item)} role="button" aria-hidden="true">
               <ItemCard itemInfo={item} />
             </div>
-          ))}
+        ))}
         {loading && <AnimatedIcon />}
       </Content>
     </div>
 
-    
   );
 };
 

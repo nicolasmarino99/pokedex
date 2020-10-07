@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../assets/stlyes/Card.scss';
 
-const ItemCard = ({ itemInfo }) => {
-    
-    return (
+const ItemCard = ({ itemInfo }) => (
 
   <Link className="link-card" key={itemInfo.name} to={`/pokemons/${itemInfo.name}`}>
     <div className={`Card ${itemInfo.name ? itemInfo.category.name : ''}`}>
@@ -17,8 +15,6 @@ const ItemCard = ({ itemInfo }) => {
     </div>
   </Link>
 
-)};
-
-
+);
 
 export default ItemCard;
