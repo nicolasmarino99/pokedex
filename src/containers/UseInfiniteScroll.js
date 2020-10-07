@@ -11,8 +11,6 @@ import pokemonLogo from '../assets/imgs/pokemon.svg';
 import '../assets/stlyes/Pokedex.scss';
 import FilterNav from '../components/FilterNav';
 
-
-
 const Content = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill,16%);
@@ -31,7 +29,7 @@ const Content = styled.div`
 }
 `;
 
-const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
+const UseInfiniteScroll = ({ pokemonsList, savePokemonsList, savePokemon, thema }) => {
   const [pokemons, setPokemons] = useState([]);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -48,7 +46,7 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
         const data = await getData(`https://pokeapi.co/api/v2/pokemon?offset=${page + 20}&limit=20`);
         if (data) data.results.forEach(async pokemon => pokemonsList2.push(await getData(`${pokemon.url}`)));
         setPokemons(pokemonsList2);
-
+        console.log(pokemonsList2, 'aync')
         savePokemonsList(pokemons);
         setLoading(false);
       })();
@@ -62,11 +60,12 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
       const data = await getData(`https://pokeapi.co/api/v2/pokemon?offset=${page}&limit=20`);
       if (data) data.results.forEach(async pokemon => pokemonsList.push(await getData(`${pokemon.url}`)));
       setPokemons(pokemonsList);
-
+        console.log(data, pokemonsList, pokemons, 'ayncEff')
       savePokemonsList(pokemonsList);
       setLoading(false);
     })();
   }, []);
+  console.log(pokemons, pokemonsList, 'redux')
   return (
 
     <div className="Pokedex">
@@ -83,6 +82,8 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
         {loading && <AnimatedIcon />}
       </Content>
     </div>
+
+    
   );
 };
 
@@ -95,10 +96,10 @@ const mapStateToProps = state => ({
   pokemonsList: state.pokemonsList,
 });
 
-Pokedex.propTypes = {
+UseInfiniteScroll.propTypes = {
   savePokemonsList: PropTypes.func.isRequired,
   savePokemon: PropTypes.func.isRequired,
   pokemonsList: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Pokedex);
+export default connect(mapStateToProps, mapDispatchToProps)(UseInfiniteScroll);

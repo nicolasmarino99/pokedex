@@ -4,11 +4,11 @@ import { Switch, Route } from 'react-router-dom';
 import Loader from './loaders/Loader';
 import PokeApp from './pages/PokeApp';
 import Pokedex from './containers/Pokedex';
-import Moves from './pages/Moves';
-import Abilities from './pages/Abilities';
-import Items from './pages/Items';
-import Locations from './pages/Locations';
-import TypeCharts from './pages/TypeCharts';
+import Moves from './containers/Moves';
+import Abilities from './containers/Abilities';
+import Items from './containers/Items';
+import Locations from './containers/Locations';
+import TypeCharts from './containers/TypeCharts';
 import Pokemon from './containers/Pokemon';
 
 const App = () => {

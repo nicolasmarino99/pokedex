@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 
 import _ from 'lodash';
 import getData from '../api';
-import { savePokemonsList, savePokemon } from '../actions';
-import { Card, AnimatedIcon } from '../components/Card';
+import { saveItemsList, saveItem } from '../actions';
+
+import { AnimatedIcon } from '../components/Card';
 import pokemonLogo from '../assets/imgs/pokemon.svg';
 import '../assets/stlyes/Pokedex.scss';
 import FilterNav from '../components/FilterNav';
-
-
+import ItemCard from '../components/ItemCard';
 
 const Content = styled.div`
     display: grid;
@@ -31,8 +31,8 @@ const Content = styled.div`
 }
 `;
 
-const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
-  const [pokemons, setPokemons] = useState([]);
+const Items = ({ itemsList, saveItemsList, saveItem }) => {
+  const [items, setItems] = useState([]);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(true);
 
@@ -44,12 +44,12 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
 
       (async () => {
         setLoading(true);
-        const pokemonsList2 = [];
-        const data = await getData(`https://pokeapi.co/api/v2/pokemon?offset=${page + 20}&limit=20`);
-        if (data) data.results.forEach(async pokemon => pokemonsList2.push(await getData(`${pokemon.url}`)));
-        setPokemons(pokemonsList2);
+        const itemsList2 = [];
+        const data = await getData(`https://pokeapi.co/api/v2/item?offset=${page + 20}&limit=20`);
+        if (data) data.results.forEach(async item => itemsList2.push(await getData(`${item.url}`)));
+        setItems(itemsList2);
 
-        savePokemonsList(pokemons);
+        saveItemsList(items);
         setLoading(false);
       })();
     }
@@ -58,12 +58,11 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
   useEffect(() => {
     (async () => {
       setLoading(true);
-      const pokemonsList = [];
-      const data = await getData(`https://pokeapi.co/api/v2/pokemon?offset=${page}&limit=20`);
-      if (data) data.results.forEach(async pokemon => pokemonsList.push(await getData(`${pokemon.url}`)));
-      setPokemons(pokemonsList);
-
-      savePokemonsList(pokemonsList);
+      const itemsList = [];
+      const data = await getData(`https://pokeapi.co/api/v2/item?item=${page}&limit=20`);
+      if (data) data.results.forEach(async item => itemsList.push(await getData(`${item.url}`)));
+      setItems(itemsList);
+      saveItemsList(itemsList);
       setLoading(false);
     })();
   }, []);
@@ -74,31 +73,33 @@ const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {
       <h2>Pokedex</h2>
       <img alt="poke-logo" className="pokedex-logo" src={pokemonLogo} />
       <Content onScroll={handleScroll}>
-        {(pokemonsList.length > 1
-          ? _.uniq(pokemonsList, 'id') : pokemons).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(pokemon => (
-            <div className="foo" key={pokemon.name} onClick={() => savePokemon(pokemon)} role="button" aria-hidden="true">
-              <Card pokemonInfo={pokemon} />
+        {(itemsList.length > 1
+          ? _.uniq(itemsList, 'id') : items).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(item => (
+            <div className="foo" key={item.id} onClick={() => saveItem(item)} role="button" aria-hidden="true">
+              <ItemCard itemInfo={item} />
             </div>
-        ))}
+          ))}
         {loading && <AnimatedIcon />}
       </Content>
     </div>
+
+    
   );
 };
 
 const mapDispatchToProps = dispatch => ({
-  savePokemonsList: pokemonsList => dispatch(savePokemonsList(pokemonsList)),
-  savePokemon: pokemon => dispatch(savePokemon(pokemon)),
+  saveItemsList: itemsList => dispatch(saveItemsList(itemsList)),
+  saveItem: item => dispatch(saveItem(item)),
 });
 
 const mapStateToProps = state => ({
-  pokemonsList: state.pokemonsList,
+  itemsList: state.itemsList,
 });
 
-Pokedex.propTypes = {
-  savePokemonsList: PropTypes.func.isRequired,
-  savePokemon: PropTypes.func.isRequired,
-  pokemonsList: PropTypes.func.isRequired,
+Items.propTypes = {
+  saveItemsList: PropTypes.func.isRequired,
+  saveItem: PropTypes.func.isRequired,
+  itemsList: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Pokedex);
+export default connect(mapStateToProps, mapDispatchToProps)(Items);
