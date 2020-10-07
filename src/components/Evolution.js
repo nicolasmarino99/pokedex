@@ -4,7 +4,6 @@ import { AnimatedIcon } from './Card';
 import '../assets/stlyes/Evolution.scss';
 
 const Evolution = ({id, componentName}) => {
-    const [specieInfo, setSpecieInfo] = useState('');
     const [evolutionChain, setEvolutionChain] = useState('');
     const [evolution1, setEvolution1] = useState('');
     const [evolution2, setEvolution2] = useState('');
@@ -16,7 +15,6 @@ const Evolution = ({id, componentName}) => {
       try {
         const data = await getData(`https://pokeapi.co/api/v2/pokemon-species/${id}/`);
         const urlChain = data.evolution_chain.url;
-        setSpecieInfo(data);
   
         const chainData = await getData(`${urlChain}`);
         setEvolutionChain(chainData)

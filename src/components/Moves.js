@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/stlyes/Moves.scss';
 import '../assets/stlyes/colors.scss';
-import { connect } from 'react-redux';
 import getData from '../api';
-import { saveType } from '../actions';
 import { AnimatedIcon } from './Card';
 
 const Moves = ({ pokemon, componentName }) => {
@@ -49,14 +47,5 @@ const Moves = ({ pokemon, componentName }) => {
     </div>
   );
 };
-
-const mapDispatchToProps = dispatch => ({
-  saveType: typeList => dispatch(saveType(typeList)),
-
-});
-
-const mapStateToProps = state => ({
-  typeState: state.typeList,
-});
 
 export default Moves;
