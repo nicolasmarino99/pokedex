@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/stlyes/Pokemon.scss';
+import '../assets/stlyes/colors.scss';
 import PropTypes from 'prop-types';
 import LoveNav from '../components/LoveNav';
 import PokemonStats from '../components/PokemonStats';

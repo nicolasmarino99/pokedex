@@ -7,3 +7,8 @@ export const savePokemonsList = pokemonsList => ({
   type: 'SAVE_POKEMONS_LIST',
   pokemonsList,
 });
+
+export const saveType = typeList => ({
+  type: 'SAVE_TYPE',
+  typeList,
+});
