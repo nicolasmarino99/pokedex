@@ -67,7 +67,7 @@ const Moves = ({ movesList, saveMovesList, saveMove }) => {
       console.log(movesList1);
     })();
   }, []);
-  console.log(movesList);
+  console.log(moves);
   return (
 
     <div className="Pokedex">
@@ -75,7 +75,7 @@ const Moves = ({ movesList, saveMovesList, saveMove }) => {
       <h2>Pokedex</h2>
       <img alt="poke-logo" className="pokedex-logo" src={pokemonLogo} />
       <Content onScroll={handleScroll}>
-        {(movesList
+        {(movesList.length > 0
           ? _.uniq(movesList, 'id') : moves).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(move => (
             <div className="foo" key={move.id} onClick={() => saveMove(move)} role="button" aria-hidden="true">
               <MoveCard moveInfo={move} />
