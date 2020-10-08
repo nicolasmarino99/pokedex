@@ -27,3 +27,23 @@ export const saveMovesList = movesList => ({
   type: 'SAVE_MOVES_LIST',
   movesList,
 });
+
+export const saveMachine = machine => ({
+  type: 'SAVE_MACHINE',
+  machine,
+});
+
+export const saveMachinesList = machinesList => ({
+  type: 'SAVE_MACHINES_LIST',
+  machinesList,
+});
+
+export const saveLocation = location => ({
+  type: 'SAVE_LOCATION',
+  location,
+});
+
+export const saveLocationsList = locationsList => ({
+  type: 'SAVE_LOCATIONS_LIST',
+  locationsList,
+});

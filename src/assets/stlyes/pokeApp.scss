@@ -103,6 +103,7 @@ html {
     display: grid;
     margin-top: 1%;
     grid-template-columns: repeat(2, 15%);
+    
 
     @media only screen
 
@@ -119,6 +120,7 @@ html {
     }
 
     button {
+      text-transform: capitalize;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -150,7 +152,7 @@ html {
       }
     }
 
-    .abilities {
+    .generations {
       @include setColor(#58aaf6);
 
       &:hover {
@@ -174,7 +176,7 @@ html {
       }
     }
 
-    .type-charts {
+    .machines {
       @include setColor(#b1736c);
 
       &:hover {

@@ -20,7 +20,7 @@ const MoveCard = ({ moveInfo }) => (
       
       <p>
           <p className="tag">{`Effect Chance ${moveInfo.effect_chance}`}</p>
-          <p className="tag">{`Priority ${moveInfo.priority}`}</p>
+          <p className="tag">{`Type ${moveInfo.type.name}`}</p>
           <p className="tag">{`Target ${moveInfo.target.name}`}</p>
         </p>
         </div>

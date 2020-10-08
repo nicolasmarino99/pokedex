@@ -38,8 +38,8 @@ const Moves = ({ pokemon, componentName }) => {
         <div className={types[i]}>
           <h1>{move.move.name}</h1>
           <h4>{`Type: ${types[i]}`}</h4>
-          {`PP: ${pPs[i]}   `}
-          {`Accuracy: ${acuracys[i]}   `}
+          {`PP: ${pPs[i]}`}
+          {`Accuracy: ${acuracys[i]}`}
           {`Power: ${powers[i]}`}
         </div>
       ))}

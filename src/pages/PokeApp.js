@@ -9,7 +9,7 @@ import '../assets/stlyes/pokeApp.scss';
 const PokeApp = () => {
   const [query, setQuery] = useState('');
   const handleSubmit = e => setQuery(e.target.value);
-  const links = ['pokedex', 'moves', 'abilities', 'items', 'locations', 'type-charts'];
+  const links = ['pokedex', 'moves', 'generations', 'items', 'locations', 'machines'];
 
   return (
     <>

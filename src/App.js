@@ -8,7 +8,7 @@ import Moves from './containers/Moves';
 import Abilities from './containers/Abilities';
 import Items from './containers/Items';
 import Locations from './containers/Locations';
-import TypeCharts from './containers/TypeCharts';
+import Machines from './containers/Machines';
 import Pokemon from './containers/Pokemon';
 
 const App = () => {
@@ -34,7 +34,7 @@ const App = () => {
     { path: '/abilities', key: 'Abilities', component: Abilities },
     { path: '/items', key: 'Items', component: Items },
     { path: '/locations', key: 'Locations', component: Locations },
-    { path: '/type-charts', key: 'TypeCharts', component: TypeCharts },
+    { path: '/machines', key: 'Machines', component: Machines },
     { path: '/pokemons/:name', key: 'pokemons', component: Pokemon },
     { path: '/*', key: 'notFound', component: () => '404 NOT FOUND' },
   ];

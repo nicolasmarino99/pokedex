@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 
 import _ from 'lodash';
 import getData from '../api';
-import { savePokemonsList, savePokemon } from '../actions';
-import { Card, AnimatedIcon } from '../components/Card';
+import { saveMachinesList, saveMachine } from '../actions';
+import { AnimatedIcon } from '../components/Card';
+import MachinesCard from '../components/MachinesCard';
 import pokemonLogo from '../assets/imgs/pokemon.svg';
 import '../assets/stlyes/Pokedex.scss';
 import FilterNav from '../components/FilterNav';
@@ -29,8 +30,8 @@ const Content = styled.div`
 }
 `;
 
-const UseInfiniteScroll = ({ pokemonsList, savePokemonsList, savePokemon, thema }) => {
-  const [pokemons, setPokemons] = useState([]);
+const UseInfiniteScroll = ({ machinesList, saveMachinesList, saveMachine, thema }) => {
+  const [machines, setMachines] = useState([]);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(true);
 
@@ -42,13 +43,13 @@ const UseInfiniteScroll = ({ pokemonsList, savePokemonsList, savePokemon, thema 
 
       (async () => {
         setLoading(true);
-        const pokemonsList2 = [];
-        const data = await getData(`https://pokeapi.co/api/v2/pokemon?offset=${page + 20}&limit=20`);
-        if (data) data.results.forEach(async pokemon => pokemonsList2.push(await getData(`${pokemon.url}`)));
-        setPokemons(pokemonsList2);
+        const machinesList2 = [];
+        const data = await getData(`https://pokeapi.co/api/v2/machine?offset=${page + 20}&limit=20`);
+        if (data) data.results.forEach(async machine => machinesList2.push(await getData(`${machine.url}`)));
+        setMachines(machinesList2);
 
-        savePokemonsList(pokemons);
-        setLoading(false);
+        saveMachinesList(machines);
+        setLoading(false); 
       })();
     }
   };
@@ -56,12 +57,12 @@ const UseInfiniteScroll = ({ pokemonsList, savePokemonsList, savePokemon, thema 
   useEffect(() => {
     (async () => {
       setLoading(true);
-      const pokemonsList = [];
-      const data = await getData(`https://pokeapi.co/api/v2/pokemon?offset=${page}&limit=20`);
-      if (data) data.results.forEach(async pokemon => pokemonsList.push(await getData(`${pokemon.url}`)));
-      setPokemons(pokemonsList);
+      const machinesList = [];
+      const data = await getData(`https://pokeapi.co/api/v2/machine?offset=${page}&limit=20`);
+      if (data) data.results.forEach(async machine => machinesList.push(await getData(`${machine.url}`)));
+      setMachines(machinesList);
         
-      savePokemonsList(pokemons);
+      saveMachinesList(machines);
       setLoading(false);
     })();
   }, []);
@@ -72,10 +73,10 @@ const UseInfiniteScroll = ({ pokemonsList, savePokemonsList, savePokemon, thema 
       <h2>Pokedex</h2>
       <img alt="poke-logo" className="pokedex-logo" src={pokemonLogo} />
       <Content onScroll={handleScroll}>
-        {(pokemonsList.length > 1
-          ? _.uniq(pokemonsList, 'id') : pokemons).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(pokemon => (
-            <div className="foo" key={pokemon.name} onClick={() => savePokemon(pokemon)} role="button" aria-hidden="true">
-              <Card pokemonInfo={pokemon} />
+        {(machinesList.length > 1
+          ? _.uniq(machinesList, 'id') : machines).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(machine => (
+            <div className="foo" key={machine.name} onClick={() => saveMachine(machine)} role="button" aria-hidden="true">
+              <MachinesCard machineInfo={machine} />
             </div>
         ))}
         {loading && <AnimatedIcon />}
@@ -87,18 +88,18 @@ const UseInfiniteScroll = ({ pokemonsList, savePokemonsList, savePokemon, thema 
 };
 
 const mapDispatchToProps = dispatch => ({
-  savePokemonsList: pokemonsList => dispatch(savePokemonsList(pokemonsList)),
-  savePokemon: pokemon => dispatch(savePokemon(pokemon)),
+  saveMachinesList: machinesList => dispatch(saveMachinesList(machinesList)),
+  saveMachine: machine => dispatch(saveMachine(machine)),
 });
 
 const mapStateToProps = state => ({
-  pokemonsList: state.pokemonsList,
+  machinesList: state.machinesList,
 });
 
 UseInfiniteScroll.propTypes = {
-  savePokemonsList: PropTypes.func.isRequired,
-  savePokemon: PropTypes.func.isRequired,
-  pokemonsList: PropTypes.func.isRequired,
+  saveMachinesList: PropTypes.func.isRequired,
+  saveMachine: PropTypes.func.isRequired,
+  machinesList: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UseInfiniteScroll);
