@@ -8,17 +8,17 @@ import '../assets/stlyes/colors.scss';
 const MachinesCard = ({ machineInfo }) => (
 
   <Link className="link-card" key={machineInfo.item.name} to={`/pokemons/${machineInfo.item.name}`}>
-    <div className={`MoveCard ${machineInfo.item.name}`}>
+    <div className="Card MachinesCard">
     <p className="name">{machineInfo.item.name}</p>
       <div className="info-type">
         
         <p>
-          <p className="tag">{`Name ${machineInfo.move.name}`}</p>
+          <p className="tag"><b>Name</b><br></br>{machineInfo.move.name}</p>
          
         </p>
       
       <p>
-          <p className="tag">{`Version group ${machineInfo.version_group.name}`}</p>
+          <p className="tag"><b>Version group</b><br></br>{machineInfo.version_group.name}</p>
          
         </p>
         </div>

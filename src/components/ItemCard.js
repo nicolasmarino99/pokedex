@@ -6,10 +6,10 @@ import '../assets/stlyes/Card.scss';
 const ItemCard = ({ itemInfo }) => (
 
   <Link className="link-card" key={itemInfo.name} to={`/pokemons/${itemInfo.name}`}>
-    <div className={`Card ${itemInfo.name ? itemInfo.category.name : ''}`}>
+    <div className="Card ItemsCard">
       <div className="info-type">
         <p className="name">{itemInfo.name}</p>
-        <p>{itemInfo.name ? itemInfo.category.name : ''}</p>
+        <p className="tag">{itemInfo.name ? itemInfo.category.name : ''}</p>
       </div>
       <img style={itemInfo.name ? { display: 'hidden' } : { display: 'none' }} alt="pokemon-img" src={itemInfo.name ? itemInfo.sprites.default : ''} />
     </div>

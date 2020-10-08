@@ -25,6 +25,20 @@ $fairy:#f8b3ed;
 .link-card {
   display: flex;
   justify-content: center;
+  .ItemsCard {
+    background: #ffce4b;
+
+    &:hover {
+      background: #fcd56b;
+    }
+  }
+  .MachinesCard {
+    background: #b1736c;
+
+    &:hover {
+      background: #d18981;
+    }
+  }
 
   .normal {
     background: $normal;
