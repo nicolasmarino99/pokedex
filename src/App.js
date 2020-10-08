@@ -5,7 +5,7 @@ import Loader from './loaders/Loader';
 import PokeApp from './pages/PokeApp';
 import Pokedex from './containers/Pokedex';
 import Moves from './containers/Moves';
-import Abilities from './containers/Abilities';
+import Generations from './containers/Generations';
 import Items from './containers/Items';
 import Locations from './containers/Locations';
 import Machines from './containers/Machines';
@@ -31,7 +31,7 @@ const App = () => {
     { path: '/', key: 'Home', component: PokeApp },
     { path: '/pokedex', key: 'About', component: Pokedex },
     { path: '/moves', key: 'Moves', component: Moves },
-    { path: '/abilities', key: 'Abilities', component: Abilities },
+    { path: '/generations', key: 'Generations', component: Generations },
     { path: '/items', key: 'Items', component: Items },
     { path: '/locations', key: 'Locations', component: Locations },
     { path: '/machines', key: 'Machines', component: Machines },

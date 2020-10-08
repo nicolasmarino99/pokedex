@@ -70,7 +70,7 @@ const UseInfiniteScroll = ({ machinesList, saveMachinesList, saveMachine, thema 
 
     <div className="Pokedex">
       <FilterNav />
-      <h2>Pokedex</h2>
+      <h2>Machines</h2>
       <img alt="poke-logo" className="pokedex-logo" src={pokemonLogo} />
       <Content onScroll={handleScroll}>
         {(machinesList.length > 1

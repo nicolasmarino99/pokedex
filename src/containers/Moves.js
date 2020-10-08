@@ -72,7 +72,7 @@ const Moves = ({ movesList, saveMovesList, saveMove }) => {
 
     <div className="Pokedex">
       <FilterNav />
-      <h2>Pokedex</h2>
+      <h2>Moves</h2>
       <img alt="poke-logo" className="pokedex-logo" src={pokemonLogo} />
       <Content onScroll={handleScroll}>
         {(movesList.length > 0

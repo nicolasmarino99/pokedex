@@ -32,6 +32,13 @@ $fairy:#f8b3ed;
       background: #fcd56b;
     }
   }
+  .LocationsCard {
+    background: #7c538c;
+
+      &:hover {
+        background: #9665aa;
+      }
+  }
   .MachinesCard {
     background: #b1736c;
 
