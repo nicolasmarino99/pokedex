@@ -171,7 +171,19 @@ $fairy:#f8b3ed;
   }
 }
 
-.MoveCard, .MachinesCard, .LocationsCard {
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.MoveCard,
+.MachinesCard,
+.LocationsCard {
   display: flex;
   margin-top: 0.3em;
   border-radius: 13px;
@@ -179,6 +191,13 @@ $fairy:#f8b3ed;
   padding: 1em 1em 0;
   justify-content: space-between;
   width: 100%;
+
+  &:hover {
+    text-decoration: none;
+    animation: scale 0.5s ease;
+    transform: scale(1.2);
+    z-index: 6;
+  }
 
   @media only screen
 
@@ -202,7 +221,6 @@ $fairy:#f8b3ed;
     }
   }
 
-
   .info-type {
     display: flex;
     flex-direction: row;
@@ -211,7 +229,7 @@ $fairy:#f8b3ed;
       margin: 0;
     }
 
-    
+
     .tag {
       border-radius: 6px;
       background: #fff3;
@@ -230,5 +248,4 @@ $fairy:#f8b3ed;
       }
     }
   }
-
 }

@@ -25,6 +25,7 @@ $fairy:#f8b3ed;
 .link-card {
   display: flex;
   justify-content: center;
+
   .ItemsCard {
     background: #ffce4b;
 
@@ -32,13 +33,15 @@ $fairy:#f8b3ed;
       background: #fcd56b;
     }
   }
+
   .LocationsCard {
     background: #7c538c;
 
-      &:hover {
-        background: #9665aa;
-      }
+    &:hover {
+      background: #9665aa;
+    }
   }
+
   .MachinesCard {
     background: #b1736c;
 
@@ -192,6 +195,16 @@ $fairy:#f8b3ed;
   }
 }
 
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
 .Card {
   display: flex;
   margin-top: 0.3em;
@@ -199,6 +212,14 @@ $fairy:#f8b3ed;
   padding: 1em 1em 0;
   justify-content: space-between;
   width: 100%;
+  z-index: 5;
+
+  &:hover {
+    text-decoration: none;
+    animation: scale 0.5s ease;
+    transform: scale(1.2);
+    z-index: 6;
+  }
 
   @media only screen
 

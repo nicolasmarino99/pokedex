@@ -1,21 +1,22 @@
 .Moves {
-    
-    overflow-y: scroll;
-    max-height: 14em;
-    
-    div {
-        margin: .5em;
-        border: 1px solid;
-        border-radius: 11px;
-        color: white;
-        font-weight: bold;
-        width: 96%;
-        h1 {
-            text-transform: capitalize;
-        }
-        h4 {
-            font-size: 15px;
-            margin: 0;
-        }
-    } 
+  overflow-y: scroll;
+  max-height: 14em;
+
+  div {
+    margin: 0.5em;
+    border: 1px solid;
+    border-radius: 11px;
+    color: white;
+    font-weight: bold;
+    width: 96%;
+
+    h1 {
+      text-transform: capitalize;
+    }
+
+    h4 {
+      font-size: 15px;
+      margin: 0;
+    }
+  }
 }

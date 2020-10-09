@@ -25,12 +25,23 @@ $fairy:#f8b3ed;
 .link-card {
   display: flex;
   justify-content: center;
+
   .ItemsCard {
     background: #ffce4b;
 
     &:hover {
       background: #fcd56b;
     }
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
   }
 }
 
@@ -41,9 +52,16 @@ $fairy:#f8b3ed;
   padding: 1em;
   justify-content: center;
   width: 100%;
-  -webkit-box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.57);
--moz-box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.57);
-box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.57);
+  -webkit-box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.57);
+  box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.57);
+
+  &:hover {
+    text-decoration: none;
+    animation: scale 0.5s ease;
+    transform: scale(1.2);
+    z-index: 6;
+  }
 
   @media only screen
 
