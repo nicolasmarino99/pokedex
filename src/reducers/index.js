@@ -9,8 +9,8 @@ import locationReducer from './location';
 import locationsListReducer from './locationList';
 import machineReducer from './machine';
 import machinesListReducer from './machineList';
-//import generationReducer from './generation';
-//import generationsListReducer from './generationList';
+// import generationReducer from './generation';
+// import generationsListReducer from './generationList';
 
 const reducer = combineReducers({
   pokemon: pokemonReducer,
@@ -23,8 +23,8 @@ const reducer = combineReducers({
   locationsList: locationsListReducer,
   machine: machineReducer,
   machinesList: machinesListReducer,
-  //generation: generationReducer,
-  //generationsList: generationsListReducer,
+  // generation: generationReducer,
+  // generationsList: generationsListReducer,
 });
 
 export default reducer;

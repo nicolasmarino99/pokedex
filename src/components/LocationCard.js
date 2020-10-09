@@ -9,7 +9,7 @@ const LocationsCard = ({ locationInfo }) => (
 
   <Link className="link-card" key={locationInfo.name} to={`/pokemons/${locationInfo.name}`}>
     <div className="Card LocationsCard">
-        <p className="name">{locationInfo.name}</p>
+      <p className="name">{locationInfo.name}</p>
     </div>
   </Link>
 

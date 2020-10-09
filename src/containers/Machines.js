@@ -30,7 +30,9 @@ const Content = styled.div`
 }
 `;
 
-const UseInfiniteScroll = ({ machinesList, saveMachinesList, saveMachine, thema }) => {
+const UseInfiniteScroll = ({
+  machinesList, saveMachinesList, saveMachine, thema,
+}) => {
   const [machines, setMachines] = useState([]);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -49,7 +51,7 @@ const UseInfiniteScroll = ({ machinesList, saveMachinesList, saveMachine, thema 
         setMachines(machinesList2);
 
         saveMachinesList(machines);
-        setLoading(false); 
+        setLoading(false);
       })();
     }
   };
@@ -61,7 +63,7 @@ const UseInfiniteScroll = ({ machinesList, saveMachinesList, saveMachine, thema 
       const data = await getData(`https://pokeapi.co/api/v2/machine?offset=${page}&limit=20`);
       if (data) data.results.forEach(async machine => machinesList.push(await getData(`${machine.url}`)));
       setMachines(machinesList);
-        
+
       saveMachinesList(machines);
       setLoading(false);
     })();
@@ -83,7 +85,6 @@ const UseInfiniteScroll = ({ machinesList, saveMachinesList, saveMachine, thema 
       </Content>
     </div>
 
-    
   );
 };
 

@@ -33,16 +33,14 @@ const Generations = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  
-
   useEffect(() => {
     (async () => {
       setLoading(true);
-       const c = []; 
-      const data = [...Array(8).keys()].map(async (x,i) => c.push(await getData(`https://pokeapi.co/api/v2/generation/${i+1}`)))
-      setItems(c)
+      const c = [];
+      const data = [...Array(8).keys()].map(async (x, i) => c.push(await getData(`https://pokeapi.co/api/v2/generation/${i + 1}`)));
+      setItems(c);
       setLoading(false);
-      console.log(c)
+      console.log(c);
     })();
   }, []);
   return (
@@ -52,11 +50,10 @@ const Generations = () => {
       <h2>Generations</h2>
       <img alt="poke-logo" className="pokedex-logo" src={pokemonLogo} />
       <Content>
-      {(items
-          ? items : []).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(item => (
-            <div className="foo" key={item.id} role="button" aria-hidden="true">
-              <GenerationCard generationInfo={item} />
-            </div>
+        {(items || []).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(item => (
+          <div className="foo" key={item.id} role="button" aria-hidden="true">
+            <GenerationCard generationInfo={item} />
+          </div>
         ))}
         {loading && <AnimatedIcon />}
       </Content>
