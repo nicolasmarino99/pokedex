@@ -24,12 +24,12 @@ const Content = styled.div`
     height: 29em;
     margin: 0 auto;
     overflow: auto;
-    grid-gap: 12px;
+    grid-gap: 19px;
     justify-content: center;
 }
 `;
 
-const Generations = ({ itemsList, saveItemsList, saveItem }) => {
+const Generations = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -49,12 +49,12 @@ const Generations = ({ itemsList, saveItemsList, saveItem }) => {
 
     <div className="Pokedex">
       <FilterNav />
-      <h2>Items</h2>
+      <h2>Generations</h2>
       <img alt="poke-logo" className="pokedex-logo" src={pokemonLogo} />
       <Content>
       {(items
           ? items : []).sort((a, b) => ((a.id > b.id) ? 1 : -1)).map(item => (
-            <div className="foo" key={item.id} onClick={() => saveItem(item)} role="button" aria-hidden="true">
+            <div className="foo" key={item.id} role="button" aria-hidden="true">
               <GenerationCard generationInfo={item} />
             </div>
         ))}

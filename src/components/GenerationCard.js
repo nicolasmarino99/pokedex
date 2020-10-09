@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import '../assets/stlyes/Card.scss';
+import '../assets/stlyes/generationCard.scss';
 import getData from '../api';
 import { AnimatedIcon } from './Card';
 
@@ -26,7 +26,6 @@ const GenerationCard = ({ generationInfo }) => {
            const images = []; 
           const data = [...Array(3).keys()].map(async (x,i) => { 
             const index = adjutRightimgs(i);
-            console.log(index, generationInfo.id)    
             return (images.push(
               (await getData(`https://pokeapi.co/api/v2/pokemon/${generationInfo.pokemon_species[index].name}`))
               .sprites.front_default
@@ -34,16 +33,19 @@ const GenerationCard = ({ generationInfo }) => {
               ))});
           setImgs(images)
           setLoading(false);
-          console.log(images)
         })();
       }, []);
     return (
 
   <Link className="link-card" key={generationInfo.name} to={`/pokemons/${generationInfo.name}`}>
-    <div className="Card ItemsCard">
-      {generationInfo.name}
+    <div className="generationCard">
+        <div className="info-type">
+      <h1 className="name">{generationInfo.name}</h1>
+      <div>
       {imgs.map(img => <img style={img ? { display: 'hidden' } : { display: 'none' }} alt="pokemon-img" src={img} />)}
       {loading && <AnimatedIcon />}
+      </div>
+      </div>
     </div>
   </Link>
 
