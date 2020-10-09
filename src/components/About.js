@@ -15,7 +15,7 @@ const About = ({ pokemon, componentName }) => {
       <div className="element">
         <p className="title">Height</p>
         <p>
-          {`${pokemon.height} cm` }
+          {`${pokemon.height * 10} cm` }
         </p>
       </div>
       <div className="element">
