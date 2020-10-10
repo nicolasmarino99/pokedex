@@ -64,7 +64,7 @@ const Evolution = ({id, componentName}) => {
         </section>
     )
     return (
-        <div className={componentName}>
+        <div className={componentName} data-testid={componentName}>
           <h1>Evolution Chain</h1>
           <section>
            <p>

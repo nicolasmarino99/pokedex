@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 import _ from 'lodash';
 import getData from '../api';
-import { saveItemsList, saveItem } from '../actions';
+
 import { AnimatedIcon } from '../components/Card';
 import pokemonLogo from '../assets/imgs/pokemon.svg';
 import '../assets/stlyes/Pokedex.scss';
@@ -12,21 +11,19 @@ import FilterNav from '../components/FilterNav';
 import GenerationCard from '../components/GenerationCard';
 
 const Content = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fill,33%);
-    @media only screen 
-        
-        and (max-device-width: 812px) 
-        { 
-          grid-template-columns: repeat(auto-fill,44%);
-          margin-left: 4%;
-        }
-    height: 29em;
-    margin: 0 auto;
-    overflow: auto;
-    grid-gap: 19px;
-    justify-content: center;
-}
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 33%);
+  @media only screen
+  and (max-device-width: 812px) { 
+    grid-template-columns: repeat(auto-fill, 44%);
+    margin-left: 4%;
+  }
+
+  height: 29em;
+  margin: 0 auto;
+  overflow: auto;
+  grid-gap: 19px;
+  justify-content: center;
 `;
 
 const Generations = () => {
@@ -37,10 +34,9 @@ const Generations = () => {
     (async () => {
       setLoading(true);
       const c = [];
-      const data = [...Array(8).keys()].map(async (x, i) => c.push(await getData(`https://pokeapi.co/api/v2/generation/${i + 1}`)));
+      [...Array(8).keys()].map(async (x, i) => c.push(await getData(`https://pokeapi.co/api/v2/generation/${i + 1}`)));
       setItems(c);
       setLoading(false);
-      console.log(c);
     })();
   }, []);
   return (

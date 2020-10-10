@@ -33,7 +33,7 @@ const Moves = ({ pokemon, componentName }) => {
 
   return (
 
-    <div className={componentName}>
+    <div className={componentName} data-testid={componentName}>
       {pokemon.moves.map((move, i) => (
         <div className={types[i]}>
           <h1>{move.move.name}</h1>

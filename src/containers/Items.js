@@ -15,7 +15,7 @@ import ItemCard from '../components/ItemCard';
 
 const Content = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill,16%);
+    grid-template-columns: repeat(auto-fill, 16%);
     @media only screen 
         
         and (max-device-width: 812px) 
@@ -28,7 +28,7 @@ const Content = styled.div`
     overflow: auto;
     grid-gap: 12px;
     justify-content: center;
-}
+
 `;
 
 const Items = ({ itemsList, saveItemsList, saveItem }) => {

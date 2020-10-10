@@ -11,7 +11,7 @@ const About = ({ pokemon, componentName }) => {
     })();
   }, [1]);
   return (
-    <div className={componentName}>
+    <div className={componentName} data-testid={componentName}>
       <div className="element">
         <p className="title">Height</p>
         <p>

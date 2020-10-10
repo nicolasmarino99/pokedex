@@ -26,7 +26,7 @@ const Content = styled.div`
     overflow: auto;
     grid-gap: 12px;
     justify-content: center;
-}
+
 `;
 
 const Pokedex = ({ pokemonsList, savePokemonsList, savePokemon }) => {

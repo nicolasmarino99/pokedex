@@ -23,7 +23,7 @@ const BaseStats = ({ pokemon, componentName }) => {
   const higuestStats = [255, 190, 250, 194, 250, 180];
 
   return (
-    <div className={componentName}>
+    <div className={componentName} data-testid={componentName}>
 
       {pokemon.name ? pokemon.stats.map((stat, i) => (
         <div key={stat.stat.name} className="tag">

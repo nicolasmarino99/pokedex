@@ -27,12 +27,10 @@ const Content = styled.div`
     overflow: auto;
     grid-gap: 12px;
     justify-content: center;
-}
+
 `;
 
-const UseInfiniteScroll = ({
-  machinesList, saveMachinesList, saveMachine, thema,
-}) => {
+const UseInfiniteScroll = ({ machinesList, saveMachinesList, saveMachine }) => {
   const [machines, setMachines] = useState([]);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(true);

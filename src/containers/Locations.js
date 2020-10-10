@@ -15,20 +15,17 @@ import LocationCard from '../components/LocationCard';
 
 const Content = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill,16%);
-    @media only screen 
-        
-        and (max-device-width: 812px) 
-        { 
-          grid-template-columns: repeat(auto-fill,44%);
-          margin-left: 4%;
-        }
+    grid-template-columns: repeat(auto-fill, 16%);
+    @media only screen and (max-device-width: 812px) { 
+      grid-template-columns: repeat(auto-fill, 44%);
+      margin-left: 4%;
+    }
     height: 29em;
     margin: 0 auto;
     overflow: auto;
     grid-gap: 12px;
     justify-content: center;
-}
+
 `;
 
 const Locations = ({ locationsList, saveLocationsList, saveLocation }) => {
