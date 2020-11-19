@@ -1,0 +1,250 @@
+$normal: #a8a878;
+$fire: #f7786b;
+$water:#58aaf6;
+$grass:#4fc1a6;
+$electric:#ffce4b;
+$ice:#98d8d8;
+$fighting:#c03028;
+$poison:#a040a0;
+$ground:#e0c068;
+$flying:#a890f0;
+$psychic:#f85888;
+$bug:#a8b820;
+$rock:#b1736c;
+$ghost:#7c538c;
+$dark:#705848;
+$dragon:#7038f8;
+$steel:#b8b8d0;
+$fairy:#f8b3ed;
+
+@mixin setColor($color) {
+  background: $color;
+  width: 96%;
+}
+
+.link-card {
+  display: flex;
+  justify-content: center;
+
+  .normal {
+    background: $normal;
+
+    &:hover {
+      background: #c7c78f;
+    }
+  }
+
+  .fire {
+    background: $fire;
+
+    &:hover {
+      background: #f78c80;
+    }
+  }
+
+  .water {
+    background: $water;
+
+    &:hover {
+      background: #71baff;
+    }
+  }
+
+  .grass {
+    background: $grass;
+
+    &:hover {
+      background: #5ee2c3;
+    }
+  }
+
+  .electric {
+    background: $electric;
+
+    &:hover {
+      background: #ffd35a;
+    }
+  }
+
+  .ice {
+    background: $ice;
+
+    &:hover {
+      background: #a9f0f0;
+    }
+  }
+
+  .fighting {
+    background: $fighting;
+
+    &:hover {
+      background: #e43a31;
+    }
+  }
+
+  .poison {
+    background: $poison;
+
+    &:hover {
+      background: #cf53cf;
+    }
+  }
+
+  .ground {
+    background: $ground;
+
+    &:hover {
+      background: #f7d474;
+    }
+  }
+
+  .flying {
+    background: $flying;
+
+    &:hover {
+      background: #b49ef8;
+    }
+  }
+
+  .psychic {
+    background: $psychic;
+
+    &:hover {
+      background: #fa6e98;
+    }
+  }
+
+  .bug {
+    background: $bug;
+
+    &:hover {
+      background: #c8da27;
+    }
+  }
+
+  .rock {
+    background: $rock;
+
+    &:hover {
+      background: #da8e85;
+    }
+  }
+
+  .ghost {
+    background: $ghost;
+
+    &:hover {
+      background: #a26db8;
+    }
+  }
+
+  .dark {
+    background: $dark;
+
+    &:hover {
+      background: #705848;
+    }
+  }
+
+  .dragon {
+    background: $dragon;
+
+    &:hover {
+      background: #834ffd;
+    }
+  }
+
+  .steel {
+    background: $steel;
+
+    &:hover {
+      background: #d3d3ee;
+    }
+  }
+
+  .fairy {
+    background: $fairy;
+
+    &:hover {
+      background: #f7beed;
+    }
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.MoveCard,
+.MachinesCard,
+.LocationsCard {
+  display: flex;
+  margin-top: 0.3em;
+  border-radius: 13px;
+  flex-direction: column;
+  padding: 1em 1em 0;
+  justify-content: space-between;
+  width: 100%;
+
+  &:hover {
+    text-decoration: none;
+    animation: scale 0.5s ease;
+    transform: scale(1.2);
+    z-index: 6;
+  }
+
+  @media only screen
+
+    and (max-device-width: 812px) {
+    width: 105%;
+  }
+
+  align-items: center;
+
+  .name {
+    margin-left: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: capitalize;
+
+    @media only screen
+
+      and (max-device-width: 812px) {
+      font-size: 0.8em;
+    }
+  }
+
+  .info-type {
+    display: flex;
+    flex-direction: row;
+
+    p {
+      margin: 0;
+    }
+
+    .tag {
+      border-radius: 6px;
+      background: #fff3;
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+      padding: 0 5px;
+      margin: 6px;
+
+      @media only screen
+
+        and (max-device-width: 812px) {
+        font-size: 10px;
+        padding: 0 4px;
+        margin: 6px 0;
+      }
+    }
+  }
+}

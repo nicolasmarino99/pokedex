@@ -1,68 +1,148 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# A Pokedex made with React
 
-## Available Scripts
 
-In the project directory, you can run:
+## Table of Contents
 
-### `yarn start`
+- [Objective](#Objective)
+- [Live Version](#LiveVersion)
+- [Technologies Used](#Technologies-Used)
+- [Install in Your local Machine](#Install-in-Your-local-Machine)
+- [Acknowledgments](#Acknowledgments)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Objective
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The Objective was to the redux and react for filter and transform data from an external Api. In this case I chose a pokemon Api. 
 
-### `yarn test`
+In this app you could find:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- A navbar that automaticly filters a pokemon based on its ID or name.  
+- A pokedex with an infinite scroller
+- A nice UI design
+- Routes to provide extra info
 
-### `yarn build`
+The following features are under construction:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- evolution chains 
+- Moves charachteristics
+- Testing
+- extra filters
+ 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[Up](#Table-of-Contents)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### LiveVersion
+Enter to (Pokedex99)[https://pokedex99.herokuapp.com/pokedex]
+1. #### Screenshots Desktop App.
+##### Home page
+<p align="center">
+<img src="src/assets/imgs/app.jpg">
+</p>
 
-### `yarn eject`
+##### Search Pokemons
+<p align="center">
+<img src="src/assets/imgs/apppk.jpg">
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### Pokemon Stats
+<p align="center">
+<img src="src/assets/imgs/pk.jpg">
+</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### Home page
+<p align="center">
+<img src="src/assets/imgs/pokedex.jpg">
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+2. #### Screenshots Mobile App.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### Home page
+<p align="center">
+<img src="src/assets/imgs/appM.jpg">
+</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### Search Pokemons
+<p align="center">
+<img src="src/assets/imgs/apppkM.jpg">
+</p>
 
-### Code Splitting
+##### Pokemon Stats
+<p align="center">
+<img src="src/assets/imgs/pkM.jpg">
+</p>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+##### Home page
+<p align="center">
+<img src="src/assets/imgs/pokedexM.jpg">
+</p>
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+[Up](#Table-of-Contents)
 
-### Making a Progressive Web App
+### Languages and technologies used 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- React
+- Redux
+- JavaScript
+- Babel
+- ESlint
+- npm
+- Webpack
+- HTML/SCSS
+- Nodejs
+- third party API
 
-### Advanced Configuration
+[Up](#Table-of-Contents)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Install in Your local Machine
 
-### Deployment
+To run the scripts **npm** is required. To get npm you have to install [Node.js](https://nodejs.org). Follow the installation instructions for your system Mac, Linux or Windows.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Use your terminal and run the commands after each instruction.
 
-### `yarn build` fails to minify
+| Command                                             | Description                                           |
+| --------------------------------------------------- | ----------------------------------------------------- |
+| `git clone https://github.com/nicolasmarino99/Phoom.git` | Clone the repository to you computer                  |
+| `cd Phoom`                                          | Navigate to the newly created folder                  |
+| `npm install`                                       | Install dependencies and launch browser with examples |
+| `npm run start`                                         | Makes the build and starts the development server     |
+|                                                     | Press `Ctrl + c` to kill **http-server** process      |
+| `http://localhost:8080`                             | Visit this link to play the game                      |
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Up](#Table-of-Contents)
+
+## Acknowledgements
+
+- Saepul Nahwan for the design
+
+
+[Up](#Table-of-Contents)
+
+## Author
+
+:man: **Nicolás Mariño Parra**
+
+- Github: [@nicolasmarino99](https://github.com/nicolasmarino99)
+- Twitter: [@nicolasmarino99](https://twitter.com/nicolasmarino99)
+- Linkedin: [Nicolás Mariño Parra](https://www.linkedin.com/in/nicol%C3%A1s-mari%C3%B1o-parra-45a707177/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/nicolasmarino99/Phoom.git/issues).
+
+1. Fork it (https://github.com/nicolasmarino99/Phoom.git/fork)
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create a new Pull Request
+
+## Show your support
+
+Give a ⭐️ if you enjoyed this project!
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.

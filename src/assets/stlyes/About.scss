@@ -1,0 +1,29 @@
+.About {
+  display: flex;
+  flex-direction: column;
+
+  .element {
+    display: flex;
+    padding: 0 3em;
+    justify-content: space-between;
+
+    p {
+      margin: 0;
+      padding: 4px;
+      font-size: 13px;
+      text-transform: capitalize;
+    }
+
+    .title {
+      margin-right: 5em;
+    }
+  }
+
+  h1 {
+    font-size: 15px;
+    text-align: left;
+    font-weight: bolder;
+    padding-left: 3.5em;
+    margin-top: 10px;
+  }
+}
